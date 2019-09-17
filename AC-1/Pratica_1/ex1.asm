@@ -1,7 +1,6 @@
 .text
 .globl main
-main: #leitura
-      ori	$v0,$0, 5
+main: ori	$v0,$0, 5
       syscall
       ori	$t0,$v0, 0
       ori	$t2, $0, 8
