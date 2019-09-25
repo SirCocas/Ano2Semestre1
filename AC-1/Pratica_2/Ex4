@@ -19,7 +19,7 @@ main: la $a0, str1
       la $a0, str2
       ori $v0, $0, print_string
       syscall
-      or $v0,$t3,$0
+      or $a0,$t3,$0
       ori $v0,$0, print_int10
       syscall
       jr $ra
