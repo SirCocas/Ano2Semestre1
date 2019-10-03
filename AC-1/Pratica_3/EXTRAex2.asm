@@ -5,7 +5,7 @@
 # $t3 mdo
 	
       .data
-str1: .asciiz "Introduza dois numeros: "
+str1: .asciiz "Introduza um numero: "
 str2: .asciiz "Resultado: "
       
       .eqv print_string,4
@@ -14,25 +14,37 @@ str2: .asciiz "Resultado: "
       
 	.text
 	.globl main
-main: la $a0, str1
+main: move $t0, $0
+      la $a0, str1
+      ori $v0, $0, print_string
+      syscall
+
+      ori $v0, $0, read_int
+      syscall
+      move $t2, $v0
+      andi $t2, $t2, 0x0F
+      
+      la $a0, str1
       ori $v0, $0, print_string
       syscall
       
       ori $v0, $0, read_int
       syscall
       move $t3, $v0
-      and $t3, $t3, 0x0F
+      andi $t3, $t3, 0x0F
       
-while: add $t1, $t1, 1
+      move $t1,$0
+      
+while: addi $t1, $t1, 1
        beqz $t2, endWhile
       
 while2: bge $t1, 4, endWhile
-	and $t5, $t2, 0x00000001
+	andi $t5, $t2, 0x00000001
 	beqz $t5, else
-	add $t0, $t0,$ t3
+	add $t0, $t0,$t3
 	
-else:srl $t3, 1
-     sll $t4, 1
+else:sra $t3,$t3, 1
+     sll $t4,$t4, 1
      j while
       
 endWhile: la $a0, str2
@@ -40,9 +52,11 @@ endWhile: la $a0, str2
           syscall
           
           move $a0, $t0
-      	  ori $v0,$0, print_int
+	  ori $v0, $0, print_int
       	  syscall
           
+          li $v0, 10
+          syscall
 	  jr $ra     
       
       
