@@ -29,13 +29,13 @@ for j=1:4
     end
     toPlot=toPlot(1:10:100);
     subplot(1,4,j);
-    plot(toPlot);
+    plot(1:10:100,toPlot);
 end    
 
 function p = prob(n, alvos)
-    pool = randi(alvos,n,1e5);
-    fav= 1:1e5;
-    for n = 1:1e5
+    pool = randi(alvos,n,1e3);
+    fav= 1:1e3;
+    for n = 1:1e3
         fav(n)= alvos== length(unique(pool(:,n)));
     end
     p=1-mean(fav);
