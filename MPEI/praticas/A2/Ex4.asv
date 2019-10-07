@@ -25,18 +25,21 @@ var = [100 1000 10000 100000];
 for j=1:4
     toPlot=zeros(1,100);
     for i=1:10:100
-        toPlot(i)=prob(var(j),i);
+        toPlot(i)=prob(i,var(j));
     end
-    toPlot=toPlot(1:10:100);
     subplot(1,4,j);
     plot(toPlot);
-end    
+end
+
+%% prof
+mm = [1e3, 1
+    
 
 function p = prob(n, alvos)
     pool = randi(alvos,n,1e5);
     fav= 1:1e5;
     for n = 1:1e5
-        fav(n)= alvos== length(unique(pool(:,n)));
+        fav(n)= 20== length(unique(pool(:,n)));
     end
     p=1-mean(fav);
 end
