@@ -1,23 +1,47 @@
-#Mapa de registos
-#num: $t0
-#p  : $t1
-#*p : $t2
-
-	.data
-	.eqv SIZE,20
-	.eqv read_string, 8
-	.eqv print_int10, 1
-str: .space SIZE
+.data
+str1:	.asciiz "\nIntroduza uma string: "
+str2:	.asciiz "\nString alterada: "
+str:	.space 20
+	.eqv size, 20
+	.eqv print_str, 4
+	.eqv read_str, 8
+	.eqv arg0, $a0
+	.eqv arg1, $a1
+	.eqv func, $v0
+	.eqv pointer, $t0
+	.eqv char, $t1
 	.text
 	.globl main
+main:
+	# ask for string
+	la arg0, str1
+	li func, print_str
+	syscall	
 	
-main: la $a0, str
-      li $a1, SIZE        #$a1=SIZE
-      li $v0, read_string
-      syscall             #read_string(str,SIZE)
-      la $t1, str
-      
-while: lb $t2, 0($t1)
-       add $t2, $t2, 0x20 
-       addu $t1, $t1,1
-       beq
+	# read the string
+	la arg0, str
+	li arg1, size
+	li func, read_str
+	syscall	
+	
+	la pointer, str			# *pointer -> str
+	
+while:
+	lb char, 0(pointer)		# pick the character
+	beq char, '\n', endw		# check if end of string
+	sub char, char, 0x61		# char = char - 'a'
+	addi char, char, 0x41		# char = char + 'A'
+	sb char, 0(pointer)		# substitute the character
+	addi pointer, pointer, 1	# pointer++
+	j while
+	
+endw:
+	la arg0, str2
+	li func, print_str
+	syscall
+	
+	la arg0, str
+	li func, print_str
+	syscall
+
+	
