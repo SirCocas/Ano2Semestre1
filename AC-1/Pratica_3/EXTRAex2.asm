@@ -3,14 +3,13 @@
 # $t1 - i
 # $t2 - mdor
 # $t3 mdo
-	
+      .eqv print_string,4
+      .eqv read_int,5
+      .eqv print_int,1	
       .data
 str1: .asciiz "Introduza um numero: "
 str2: .asciiz "Resultado: "
-      
-      .eqv print_string,4
-      .eqv read_int,5
-      .eqv print_int,1
+
       
 	.text
 	.globl main
@@ -35,15 +34,14 @@ main: move $t0, $0
       
       move $t1,$0
       
-while: addi $t1, $t1, 1
-       beqz $t2, endWhile
-      
-while2: bge $t1, 4, endWhile
-	andi $t5, $t2, 0x00000001
-	beqz $t5, else
-	add $t0, $t0,$t3
+while: beqz $t2, endWhile
+       bge $t1, 4, endWhile
+       andi $t5, $t2, 0x00000001
+       beqz $t5, else
+       add $t0, $t0,$t3
+       addi $t1,$t1,1
 	
-else:sra $t3,$t3, 1
+else:srl $t3,$t3, 1
      sll $t4,$t4, 1
      j while
       
@@ -58,7 +56,4 @@ endWhile: la $a0, str2
           li $v0, 10
           syscall
 	  jr $ra     
-      
-      
-      
-      
+  

@@ -21,23 +21,29 @@ res=1-mean(fav)
 %prob- probabilidade de se ter acertado k vezes no mesmo alvo
 clc
 clear all
-var = [100 1000 10000 100000];
+var = [1e3 1e4 1e5 1e6];
 for j=1:4
     toPlot=zeros(1,100);
     for i=1:10:100
-        toPlot(i)=prob(var(j),i);
+        toPlot(i)=prob(i,var(j));
     end
     toPlot=toPlot(1:10:100);
     subplot(1,4,j);
-    plot(1:10:100,toPlot);
+    plot(1:10:100,toPlot)
 end    
 
 function p = prob(n, alvos)
     pool = randi(alvos,n,1e3);
-    fav= 1:1e3;
-    for n = 1:1e3
-        fav(n)= alvos== length(unique(pool(:,n)));
-    end
-    p=1-mean(fav);
+    count=0;
+    counter2=0;
+    for k=1:length(pool)
+        u=unique(pool(:,k));
+        l=length(u);
+        counter2=counter2+1;
+        if(l<n)
+            count=count+1;
+        end;
+    end;
+    p = count/counter2;
 end
 

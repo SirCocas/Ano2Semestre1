@@ -1,0 +1,23 @@
+#Mapa de registos
+#num: $t0
+#p  : $t1
+#*p : $t2
+
+	.data
+	.eqv SIZE,20
+	.eqv read_string, 8
+	.eqv print_int10, 1
+str: .space SIZE
+	.text
+	.globl main
+	
+main: la $a0, str
+      li $a1, SIZE        #$a1=SIZE
+      li $v0, read_string
+      syscall             #read_string(str,SIZE)
+      la $t1, str
+      
+while: lb $t2, 0($t1)
+       add $t2, $t2, 0x20 
+       addu $t1, $t1,1
+       beq
