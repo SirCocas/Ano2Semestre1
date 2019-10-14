@@ -1,17 +1,9 @@
 clc
 clear all
-%number of ppl: n
-%what we want: number of people it takes to have a X
-%chance of having 2 or more people share the same bday
-n=1
-X=0.9;
-p=0;
-while(p<=X)
-    n
-    p=prob(n,365)
-    n=n+1;
-end
 
+for n =1:6
+    
+end
 
 function p = prob(n, targets)
     pool = randi(targets,n,1e3);
@@ -27,6 +19,3 @@ function p = prob(n, targets)
     end;
     p = count/counter2;
 end
-
-%A) 24
-%B) 41

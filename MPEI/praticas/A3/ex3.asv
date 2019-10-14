@@ -1,0 +1,8 @@
+%% A
+clc
+clear all
+pool = randi(2,4, 1e5) >=1;
+prob
+for i=1:4
+    
+end;
