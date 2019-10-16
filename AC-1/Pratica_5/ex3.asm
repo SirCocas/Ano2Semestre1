@@ -77,7 +77,7 @@ for2:	bge $t0, $t7, endFor2				# 	    for (i=0; i < SIZE-1; i++)
 	# lista[i+1] > $t5				#	 
 	lw $t5, 4($t3)					#
 							# 
-if:	ble $t4, $t5, endIf				# 	    	if (lista[i] > lista[i+1])
+if:	bleu $t4, $t5, endIf				# 	    	if (lista[i] > lista[i+1])
 							#         	{
 	# aux > $at					#
 	or $at, $0, $t4					# 	            aux = lista[i];
