@@ -5,8 +5,9 @@
 str1: .asciiz "Arquitetura de Computadores I"
 .text
 .globl main	
-main:   #guardarmos o $ra em $sp
-	addiu $sp, $sp, -4		
+main:   #alocamos espaço na stack para o $ra
+	addiu $sp, $sp, -4	
+	#guardamos o $ra na stack	
         sw $ra, 0($sp)			
 	#guardamos a string em a0 e chamamos a função				
 	la $a0, str1			
@@ -17,7 +18,7 @@ main:   #guardarmos o $ra em $sp
 	syscall				
 	#reposição do $ra				
 	lw $ra, 0($sp)
-	#em cima tiramos 4 a $sp, agora adicionamos 			
+	#pomos o $sp como estava			
 	addiu $sp, $sp, 4
 	#return 0							
 	ori $v0, $0, 0			
