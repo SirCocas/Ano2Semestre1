@@ -1,5 +1,5 @@
 .data
-str: .asciiz "FUNCIONA CARACAS"
+str: .asciiz "teste"
 .eqv print_string, 4
 .text
 
