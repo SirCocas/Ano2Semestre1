@@ -2,13 +2,13 @@ clc
 clear all
 desvio = 2;
 media = 14;
-pool = desvio.*randn(1000,1) + media;
+pool = desvio*randn(1,1000) + media;
 
 %% a
-probA = mean(pool & (pool < 16 & pool>12))
+probA = mean(pool < 16 & pool>12)
 
 %% b
-probB = mean(pool & (pool < 18 & pool>10))
+probB = mean(pool < 18 & pool>10)
 
 %% c
-probC = mean(pool & (pool >= 10))
+probC = mean(pool >= 10)
