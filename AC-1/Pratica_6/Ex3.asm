@@ -1,39 +1,19 @@
 .data
 #declaracao de strings and stuff
-#eqv e tal
+s_header: "O comprimento da string e' : "
 .text
 
 .globl main
 
 main:
-#define STR_MAX_SIZE 30
-#char *strcpy(char *dst, char *src);
-#int main(void)
-#{
-#	static char str1[]="I serodatupmoC ed arutetiuqrA";
-#	static char str2[STR_MAX_SIZE + 1];
-#	int exit_value;
-#	if(strlen(str1) <= STR_MAX_SIZE) {
-#		strcpy(str2, str1);
-#		print_string(str2);
-#		print_string("\n");
-#		print_string(strrev(str2));
-#		exit_value = 0;
-#	} else {
-#		print_string("String too long: ");
-#		print_int10(strlen(str1));
-#		exit_value = -1;
-#	}
-#	return exit_value;
-#}
 
-strcpy: 
-#char *strcpy(char *dst, char *src)
-#{
-#	int i=0;
-#	do			
-#	{
-#		dst[i] = src[i];
-#	} while(src[i++] != '\0');
-#	return dst;
-#}
+strcopy: li $t0, 0
+do: lb $t1, 0($a0)
+
+strlen: li $v0, 0 # int i= 0
+do: lb $t0,0($a0)
+    beqz $t0, endW
+    addi $v0, $v0, 1  #v0 são os dados que saem
+    addiu $a0, $a0, 1
+    j do
+endW: jr $ra
