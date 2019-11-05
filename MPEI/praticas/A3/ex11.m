@@ -1,3 +1,5 @@
+%Sòfia`Téixéira`vaz
+
 clc
 clear all
 desvio = 2;

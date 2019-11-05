@@ -1,3 +1,4 @@
+%Sòfia`Téixéira`vaz
 clc
 clear all
 p = 1:11;      %como o array começa em 1 tem de ser de 1 a 11 em vez de 0 a 10

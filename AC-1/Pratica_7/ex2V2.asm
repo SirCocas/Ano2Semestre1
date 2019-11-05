@@ -1,7 +1,3 @@
-# Mapa de registos
-# str: $s0
-# val: $s1
-# O main é, neste caso, uma sub-rotina intermédia
 .data
 str: .space 33
 .eqv STR_MAX_SIZE,33
@@ -31,44 +27,53 @@ do:                  # do {
    lw $ra, 0($sp)    # repõe registo $ra
    addiu $sp,$sp, 12 # liberta espaço na stack
    jr $ra            # termina programa
+      
+      
+#ItoA
+itoa: addiu $sp, $sp, -24	# 	Save $ra, $s registers
+      sw $ra, 0($sp)
+      sw $s0, 4($sp)
+      sw $s1, 8($sp)
+      sw $s2, 12($sp)
+      sw $s3, 16($sp)
+      sw $s4, 20($sp)
 
+      move $s0, $a2 		# 	char *p = s;
+      move $s1, $a0		#	$s1 -> n		
+      move $s2, $a1		# 	$s2 -> b
+      move $s4, $a2 		# 	$s4 -> s (backup to give as arg to strrev)
+do2: rem $s3, $s1, $s2	# 		digit = n % b;
+    div $s1, $s1, $s2	# 		n = n / b;
+    move $a0, $s3		#		toascii (digit)
+    jal toascii		
+    sb $v0, 0($s0)		# 		*p++ = toascii( digit );
+    addiu $s0, $s0, 1	 #		p++
+    bgtz $s0, do2
+    sb $0, 0($s0)
+    move $a0, $s4		# 	strrev( s );
+    jal streev
+    lw $ra, 0($sp)		# 	Restore $ra, $s registers
+    lw $s0, 4($sp)
+    lw $s1, 8($sp)
+    lw $s2, 12($sp)
+    lw $s3, 16($sp)
+    lw $s4, 20($sp)		
+    addiu $sp, $sp, 24
+    jr $ra			# }
+    
+    
+    
+    
+#-------#
+#TOASCII#     
+         
+toascii:			# char toascii(char v) {
+	addi $a0, $a0, '0'	# 	v += '0';
+if:	ble  $a0, '9', endIf	# 	if( v > '9' )
+	addi $a0, $a0, 7	# 		v += 7; // 'A' - '9' - 1
+endIf:	move $v0, $a0		# 	return v;
+	jr $ra			# }
 
-#----#
-#ITOA#  
-
-#Mapa de registos
-#n: $a0-> $s0
-#b: $a1->$s1
-#s: $a2->$s2
-#p: $s3
-#digit: $t0
-#Sub-rotina intermédia
-itoa: addiu $sp,$sp,-16  #reserva espaço na stack
-      sw $s0, 0($sp)    #guarda registos $sx e $ra
-      sw $s1, 4($sp)
-      sw $s2, 8($sp)
-      sw $ra, 12($sp)
-      move $s0, $a0  #copia n, b e s para registos
-      move $s1, $a1
-      move $s2, $a2  #callee-saved
-      sb $s3, 0($s2) #*p=s;
-doItoA:		     #do{
-   divu $s0, $a1     #	digit = n%b
-   mflo $s0
-   mfhi $a0
-   jal toascii	     #	*p++=toascii(digit)
-   sb $v0, 0($a2)
-   addiu $a2, $a2, 1
-   bltz $s0,doItoA   #} while(n>0);
-   li $s2, '\0'     #*p = 0;
-   jal streev        #strrev(s);
-   move $v0,$s2	     #return s;
-   lw $s0, 0($sp)
-   lw $s1, 4($sp)
-   lw $s2, 8($sp)
-   lw $ra, 12($sp)   #repõe registos
-   addiu $sp,$sp, 16 #liberta espaço
-   jr $ra
 
 #------#
 #STREEV#      
@@ -115,13 +120,3 @@ exchange: lb $t2, 0($a0)
 					
 	  jr $ra			
       
-      
-#-------#
-#TOASCII#     
-         
-toascii:			# char toascii(char v) {
-	addi $a0, $a0, '0'	# 	v += '0';
-if:	ble  $a0, '9', endIf	# 	if( v > '9' )
-	addi $a0, $a0, 7	# 		v += 7; // 'A' - '9' - 1
-endIf:	move $v0, $a0		# 	return v;
-	jr $ra			# }

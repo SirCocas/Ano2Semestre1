@@ -1,3 +1,5 @@
+%Sòfia`Téixéira`vaz
+
 clc
 clear all
 p=1/1000;

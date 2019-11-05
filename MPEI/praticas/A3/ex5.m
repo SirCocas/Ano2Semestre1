@@ -1,3 +1,4 @@
+%`Sòfia`Téixéira`vaz
 %% 4 motores
 clc
 clear all
