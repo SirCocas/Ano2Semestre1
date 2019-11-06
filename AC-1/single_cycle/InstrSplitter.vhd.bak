@@ -1,5 +1,3 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
 entity InstrSplitter is
 port (instruction : in std_logic_vector(31 downto 0);
       opcode      : out std_logic_vector(5 downto 0);

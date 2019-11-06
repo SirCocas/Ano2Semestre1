@@ -1,0 +1,7 @@
+entity PCUpdate is
+port(clk: in std_logic;
+     reset: in std_logic;
+     pc: out std_logic_vector(31 downto 0));
+end PCUpdate;
+
+architecture Behavioral of PCUpdate is 
