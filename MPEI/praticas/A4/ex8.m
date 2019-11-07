@@ -4,7 +4,7 @@ clear all
 med = 14;
 var=2;
 sizeClass=30;
-X = deletion(med, var, sizeClass);
+X = deletion(med, sqrt(var), sizeClass);
 hist(X)
 
 function res = deletion(m,d,N)
