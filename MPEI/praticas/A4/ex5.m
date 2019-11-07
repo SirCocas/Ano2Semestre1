@@ -3,7 +3,7 @@
 clc
 clear all
 pD= [0.1 0.1 0.1 0.1 0.1 0.5];
-fmp(1:6, pD, 6);
+a=fmp(1:6, pD,6)
 
 function f=fmp(xi, pX, N)
     f = zeros(N,1);
