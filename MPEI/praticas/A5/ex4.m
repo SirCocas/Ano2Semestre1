@@ -28,3 +28,5 @@ function st = key(mu, sigma)
     nums = randi(numel(symbols),[1 stLength]);           %selecionamos as posições que serão usadas para a string
     st = symbols (nums);
 end
+
+
