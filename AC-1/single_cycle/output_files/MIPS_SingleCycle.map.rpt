@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_SingleCycle
-Tue Nov 05 11:03:18 2019
+Tue Nov 12 10:53:53 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -14,10 +14,18 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: InstructionMemory:instmem
+ 13. Parameter Settings for User Entity Instance: DisplayUnit:display
+ 14. Parameter Settings for User Entity Instance: DebounceUnit:debncer
+ 15. Port Connectivity Checks: "InstrSplitter:spliter"
+ 16. Port Connectivity Checks: "PCUpdate:pcupd|LeftShifter2:shifter2"
+ 17. Port Connectivity Checks: "PCUpdate:pcupd"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +51,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 05 11:03:18 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 10:53:53 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS_SingleCycle                            ;
-; Top-level Entity Name              ; PCUpdate                                    ;
+; Top-level Entity Name              ; MIPS_SingleCycle                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 30                                          ;
-;     Total combinational functions  ; 30                                          ;
-;     Dedicated logic registers      ; 30                                          ;
-; Total registers                    ; 30                                          ;
-; Total pins                         ; 34                                          ;
+; Total logic elements               ; 423                                         ;
+;     Total combinational functions  ; 423                                         ;
+;     Dedicated logic registers      ; 119                                         ;
+; Total registers                    ; 119                                         ;
+; Total pins                         ; 106                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,8 +74,10 @@ refer to the applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; PCUpdate           ; MIPS_SingleCycle   ;
+; Top-level entity name                                                      ; MIPS_SingleCycle   ; MIPS_SingleCycle   ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -76,7 +86,6 @@ refer to the applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -155,72 +164,104 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; PCUpdate.vhd                     ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; MIPS_SingleCycle.vhd             ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd     ;         ;
+; work/MIPS_pkg.vhd                ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/MIPS_pkg.vhd        ;         ;
+; work/DisplayUnit_pkg.vhd         ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit_pkg.vhd ;         ;
+; work/DisplayUnit.vhd             ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit.vhd     ;         ;
+; work/DebounceUnit.vhd            ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DebounceUnit.vhd    ;         ;
+; InstrSplitter.vhd                ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstrSplitter.vhd        ;         ;
+; PCUpdate.vhd                     ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd             ;         ;
+; InstructionMemory.vhd            ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstructionMemory.vhd    ;         ;
+; SignExtend.vhd                   ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/SignExtend.vhd           ;         ;
+; LeftShifter2.vhd                 ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/LeftShifter2.vhd         ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 30        ;
-;                                             ;           ;
-; Total combinational functions               ; 30        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 30        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1         ;
-;     -- arithmetic mode                      ; 29        ;
-;                                             ;           ;
-; Total registers                             ; 30        ;
-;     -- Dedicated logic registers            ; 30        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 34        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 30        ;
-; Total fan-out                               ; 213       ;
-; Average fan-out                             ; 1.66      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 423            ;
+;                                             ;                ;
+; Total combinational functions               ; 423            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 220            ;
+;     -- 3 input functions                    ; 64             ;
+;     -- <=2 input functions                  ; 139            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 331            ;
+;     -- arithmetic mode                      ; 92             ;
+;                                             ;                ;
+; Total registers                             ; 119            ;
+;     -- Dedicated logic registers            ; 119            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 106            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 113            ;
+; Total fan-out                               ; 1878           ;
+; Average fan-out                             ; 2.49           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |PCUpdate                  ; 30 (30)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |PCUpdate           ; PCUpdate    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name       ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
+; |MIPS_SingleCycle              ; 423 (1)             ; 119 (0)                   ; 0           ; 0            ; 0       ; 0         ; 106  ; 0            ; |MIPS_SingleCycle                           ; MIPS_SingleCycle  ; work         ;
+;    |DebounceUnit:debncer|      ; 40 (40)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_SingleCycle|DebounceUnit:debncer      ; DebounceUnit      ; work         ;
+;    |DisplayUnit:display|       ; 298 (298)           ; 88 (88)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_SingleCycle|DisplayUnit:display       ; DisplayUnit       ; work         ;
+;    |InstructionMemory:instmem| ; 78 (78)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_SingleCycle|InstructionMemory:instmem ; InstructionMemory ; work         ;
+;    |PCUpdate:pcupd|            ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_SingleCycle|PCUpdate:pcupd            ; PCUpdate          ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; s_pc[0,1]                             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; PCUpdate:pcupd|s_pc[1]                 ; Merged with PCUpdate:pcupd|s_pc[0]     ;
+; PCUpdate:pcupd|s_pc[0]                 ; Stuck at GND due to stuck port data_in ;
+; PCUpdate:pcupd|s_pc[8..31]             ; Lost fanout                            ;
+; Total Number of Removed Registers = 26 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++-------------------------+--------------------+----------------------------------------------------------------------------+
+; Register name           ; Reason for Removal ; Registers Removed due to This Register                                     ;
++-------------------------+--------------------+----------------------------------------------------------------------------+
+; PCUpdate:pcupd|s_pc[31] ; Lost Fanouts       ; PCUpdate:pcupd|s_pc[30], PCUpdate:pcupd|s_pc[29], PCUpdate:pcupd|s_pc[28], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[27], PCUpdate:pcupd|s_pc[26], PCUpdate:pcupd|s_pc[25], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[24], PCUpdate:pcupd|s_pc[23], PCUpdate:pcupd|s_pc[22], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[21], PCUpdate:pcupd|s_pc[20], PCUpdate:pcupd|s_pc[19], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[18], PCUpdate:pcupd|s_pc[17], PCUpdate:pcupd|s_pc[16], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[15], PCUpdate:pcupd|s_pc[14], PCUpdate:pcupd|s_pc[13], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[12], PCUpdate:pcupd|s_pc[11], PCUpdate:pcupd|s_pc[10], ;
+;                         ;                    ; PCUpdate:pcupd|s_pc[9], PCUpdate:pcupd|s_pc[8]                             ;
++-------------------------+--------------------+----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -228,14 +269,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
-; Number of registers using Synchronous Clear  ; 30    ;
+; Total registers                              ; 119   ;
+; Number of registers using Synchronous Clear  ; 92    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 60    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPS_SingleCycle|PCUpdate:pcupd|s_pc[31]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS_SingleCycle|DisplayUnit:display|s_dec              ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_SingleCycle|DisplayUnit:display|s_repeatCount[2]   ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_SingleCycle|DisplayUnit:display|s_count[9]         ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |MIPS_SingleCycle|DebounceUnit:debncer|s_debounceCnt[14] ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |MIPS_SingleCycle|PCUpdate:pcupd|s_pc[8]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_SingleCycle|DisplayUnit:display|Mux41              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |MIPS_SingleCycle|DisplayUnit:display|Mux3               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_SingleCycle|DisplayUnit:display|Mux18              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_SingleCycle|InstructionMemory:instmem|Mux24        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_SingleCycle|InstructionMemory:instmem|Mux39        ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |MIPS_SingleCycle|DisplayUnit:display|disp4[6]           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |MIPS_SingleCycle|InstructionMemory:instmem|Mux34        ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |MIPS_SingleCycle|DisplayUnit:display|disp6[6]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: InstructionMemory:instmem ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; addr_bus_size  ; 6     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DisplayUnit:display ;
++---------------------+-------+------------------------------------+
+; Parameter Name      ; Value ; Type                               ;
++---------------------+-------+------------------------------------+
+; khzclkfreq          ; 50000 ; Signed Integer                     ;
+; msecmininwidth      ; 100   ; Signed Integer                     ;
+; msecmininrepeat     ; 400   ; Signed Integer                     ;
+; msecmininrepeatfast ; 100   ; Signed Integer                     ;
+; im_addr_size        ; 6     ; Signed Integer                     ;
+; dm_addr_size        ; 6     ; Signed Integer                     ;
+; datapathtype        ; '0'   ; Enumerated                         ;
++---------------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceUnit:debncer ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                           ;
+; msecmininwidth ; 100   ; Signed Integer                           ;
+; inpolarity     ; '0'   ; Enumerated                               ;
+; outpolarity    ; '1'   ; Enumerated                               ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "InstrSplitter:spliter"                                                                ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; opcode ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rs     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rt     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; shamt  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; funct  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PCUpdate:pcupd|LeftShifter2:shifter2"                                                          ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; datain[31..26]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dataout[31..28] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PCUpdate:pcupd"                                                                          ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; pc[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc[1..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; du_pc     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -243,18 +380,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 34                          ;
-; cycloneiii_ff         ; 30                          ;
-;     SCLR              ; 30                          ;
-; cycloneiii_lcell_comb ; 31                          ;
-;     arith             ; 29                          ;
-;         2 data inputs ; 29                          ;
-;     normal            ; 2                           ;
+; boundary_port         ; 251                         ;
+; cycloneiii_ff         ; 119                         ;
+;     ENA               ; 6                           ;
+;     ENA SCLR          ; 54                          ;
+;     SCLR              ; 38                          ;
+;     plain             ; 21                          ;
+; cycloneiii_lcell_comb ; 427                         ;
+;     arith             ; 92                          ;
+;         2 data inputs ; 88                          ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 335                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 60                          ;
+;         4 data inputs ; 220                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.90                        ;
-; Average LUT depth     ; 2.83                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -273,30 +417,190 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Nov 05 11:02:53 2019
+    Info: Processing started: Tue Nov 12 10:53:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_SingleCycle -c MIPS_SingleCycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mips_singlecycle.vhd
+    Info (12022): Found design unit 1: MIPS_SingleCycle-Shell File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 30
+    Info (12023): Found entity 1: MIPS_SingleCycle File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 14
+Info (12021): Found 2 design units, including 0 entities, in source file work/mips_pkg.vhd
+    Info (12022): Found design unit 1: MIPS_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/MIPS_pkg.vhd Line: 10
+    Info (12022): Found design unit 2: MIPS_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/MIPS_pkg.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file work/divfreq.vhd
+    Info (12022): Found design unit 1: divFreq-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/divFreq.vhd Line: 17
+    Info (12023): Found entity 1: divFreq File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/divFreq.vhd Line: 11
+Info (12021): Found 2 design units, including 0 entities, in source file work/displayunit_pkg.vhd
+    Info (12022): Found design unit 1: DisplayUnit_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit_pkg.vhd Line: 13
+    Info (12022): Found design unit 2: DisplayUnit_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit_pkg.vhd Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file work/displayunit.vhd
+    Info (12022): Found design unit 1: DisplayUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit.vhd Line: 37
+    Info (12023): Found entity 1: DisplayUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DisplayUnit.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file work/debounceunit.vhd
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DebounceUnit.vhd Line: 21
+    Info (12023): Found entity 1: DebounceUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/work/DebounceUnit.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file instrsplitter.vhd
     Info (12022): Found design unit 1: InstrSplitter-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstrSplitter.vhd Line: 15
     Info (12023): Found entity 1: InstrSplitter File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstrSplitter.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file pcupdate.vhd
-    Info (12022): Found design unit 1: PCUpdate-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 11
+    Info (12022): Found design unit 1: PCUpdate-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 17
     Info (12023): Found entity 1: PCUpdate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 5
-Info (12127): Elaborating entity "PCUpdate" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file instructionmemory.vhd
+    Info (12022): Found design unit 1: InstructionMemory-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstructionMemory.vhd Line: 17
+    Info (12023): Found entity 1: InstructionMemory File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/InstructionMemory.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
+    Info (12022): Found design unit 1: SignExtend-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/SignExtend.vhd Line: 9
+    Info (12023): Found entity 1: SignExtend File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/SignExtend.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file leftshifter2.vhd
+    Info (12022): Found design unit 1: LeftShifter2-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/LeftShifter2.vhd Line: 9
+    Info (12023): Found entity 1: LeftShifter2 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/LeftShifter2.vhd Line: 4
+Info (12127): Elaborating entity "MIPS_SingleCycle" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at MIPS_SingleCycle.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+Warning (10541): VHDL Signal Declaration warning at MIPS_SingleCycle.vhd(19): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+Warning (10036): Verilog HDL or VHDL warning at MIPS_SingleCycle.vhd(45): object "s_op" assigned a value but never read File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at MIPS_SingleCycle.vhd(46): object "s_rs" assigned a value but never read File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at MIPS_SingleCycle.vhd(47): object "s_rt" assigned a value but never read File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at MIPS_SingleCycle.vhd(48): object "s_rd" assigned a value but never read File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at MIPS_SingleCycle.vhd(49): object "s_funct" assigned a value but never read File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 49
+Info (12129): Elaborating entity "PCUpdate" using architecture "A:behavioral" for hierarchy "PCUpdate:pcupd" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 56
+Info (12129): Elaborating entity "LeftShifter2" using architecture "A:behavioral" for hierarchy "PCUpdate:pcupd|LeftShifter2:shifter1" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 43
+Info (12129): Elaborating entity "InstructionMemory" using architecture "A:behavioral" for hierarchy "InstructionMemory:instmem" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 67
+Info (12129): Elaborating entity "InstrSplitter" using architecture "A:behavioral" for hierarchy "InstrSplitter:spliter" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 73
+Info (12129): Elaborating entity "SignExtend" using architecture "A:behavioral" for hierarchy "SignExtend:signext" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 84
+Info (12129): Elaborating entity "DisplayUnit" using architecture "A:behavioral" for hierarchy "DisplayUnit:display" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 96
+Info (12129): Elaborating entity "DebounceUnit" using architecture "A:behavioral" for hierarchy "DebounceUnit:debncer" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 115
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pc[0]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 8
-    Warning (13410): Pin "pc[1]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/PCUpdate.vhd Line: 8
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 18
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 19
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_0__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_1__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_2__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_3__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_4__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_5__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_6__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_7__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_8__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_9__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_10__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_11__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_12__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_13__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_14__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_15__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_16__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_17__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_18__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_19__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_20__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_21__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_22__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_23__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_24__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_25__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_26__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_27__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_28__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_29__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_30__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_DMdata_31__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_31__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_30__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_28__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_26__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_25__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_RFdata_20__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_31__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_30__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_28__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_26__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_25__gl_output" is stuck at GND
+    Warning (13410): Pin "global.bp.work.DisplayUnit_pkg.DU_IMdata_20__gl_output" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_0_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_10_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_11_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_12_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_13_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_14_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_15_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_16_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_17_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_18_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_19_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_1_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_20_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_21_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_22_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_23_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_24_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_25_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_26_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_27_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_28_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_29_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_2_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_30_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_31_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_3_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_4_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_5_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_6_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_7_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_8_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_9_" has a missing source. The net will be connected to GND and its default value will be ignored.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 64 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 30 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4800 megabytes
-    Info: Processing ended: Tue Nov 05 11:03:18 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:39
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/single_cycle/MIPS_SingleCycle.vhd Line: 17
+Info (21057): Implemented 535 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 83 output pins
+    Info (21061): Implemented 429 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
+    Info: Peak virtual memory: 4799 megabytes
+    Info: Processing ended: Tue Nov 12 10:53:53 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:35
 
 
