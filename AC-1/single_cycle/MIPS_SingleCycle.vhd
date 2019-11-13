@@ -40,54 +40,57 @@ architecture Shell of MIPS_SingleCycle is
 -- Other signals
 	signal s_clk : std_logic;
 	signal s_pc : std_logic_vector(31 downto 0);
-	signal s_signExtend: std_logic_vector(31 downto 0);
-	signal s_jAddr: std_logic_vector(25 downto 0);
-	signal s_op : std_logic_vector(5 downto 0);
-	signal s_rs : std_logic_vector(4 downto 0);
-	signal s_rt : std_logic_vector(4 downto 0);
-	signal s_rd : std_logic_vector(4 downto 0);
+-- Auxiliar
+	signal s_jumpAddr: std_logic_vector(25 downto 0);
+	signal s_extendImm : std_logic_vector(31 downto 0);
+	signal s_immediate: std_logic_vector(15 downto 0);
+	signal s_instruction: std_logic_vector(31 downto 0);
+	signal s_op: std_logic_vector(5 downto 0);
+	signal s_rs: std_logic_vector(4 downto 0);
+	signal s_rt: std_logic_vector(4 downto 0);
+	signal s_rd: std_logic_vector(4 downto 0);
+	signal s_shamt: std_logic_vector(4 downto 0);
 	signal s_funct: std_logic_vector(5 downto 0);
-	signal s_imm : std_logic_vector(15 downto 0);
 	
 	
 begin
 
 -- PC Update
 pcupd:	entity work.PCupdate(Behavioral)	
-			port map(clk		=> s_clk,
+			port map(clk		=> s_clk,  -- ou KEY[0]?
 						reset		=> not KEY(1),
 						branch	=> '0',
 						jump		=> '0',
 						zero		=> '0',
-						offset32	=> s_signExtend,
-						jAddr26	=> s_jAddr,
+						offset32	=> s_extendImm,
+						jAddr26	=> s_jumpAddr,
 						pc			=> s_pc);
 
 -- Instruction Memory
 instmem:	entity work.InstructionMemory(Behavioral)
 			generic map(ADDR_BUS_SIZE => ROM_ADDR_SIZE)
-			port map(address		=> s_pc((ROM_ADDR_SIZE + 1)downto 2) ,
-						readData		=> sd_readData1);
+			port map(address		=> s_pc( (ROM_ADDR_SIZE +1) downto 2),  --word adresses! ROM-SIZE = 6 --> 2^6 = words --> 2^6*2^2 = bytes
+						readData		=> s_instruction);
 
 -- Splitter
 spliter:	entity work.InstrSplitter(Behavioral)
-			port map(instruction		=> sd_readData1,
+			port map(instruction		=> s_instruction,
 						opcode	=> s_op,
 						rs			=> s_rs,
 						rt			=> s_rt,
 						rd			=> s_rd,
+						shamt		=> s_shamt,
 						funct		=> s_funct,
-						imm		=> s_imm,
-						jAddr		=> s_jAddr);
+						imm		=> s_immediate,
+						jAddr		=> s_jumpAddr);
 	
 -- Sign Extender
 signext:	entity work.SignExtend(Behavioral)
-			port map(dataIn	=> s_imm,
-						dataOut	=> s_signExtend);
+			port map(dataIn	=> s_immediate,
+						dataOut	=> s_extendImm);
 	
-   DU_RFdata <= sd_readData1;
-	DU_DMdata <= (others => '0');
-	
+	--DU_RFdata <= s_instruction;
+	DU_DMdata <= (others => '0');	
 ------------------------------------------------------------------------------
 -- Support Modules						
 ------------------------------------------------------------------------------

@@ -1130,38 +1130,6 @@ global.bp.work.DisplayUnit_pkg.DU_DMdata_31_ <> global.bp.work.DisplayUnit_pkg.D
 global.bp.work.DisplayUnit_pkg.DU_DMdata_31_ <> global.bp.work.DisplayUnit_pkg.DU_DMdata_28_
 global.bp.work.DisplayUnit_pkg.DU_DMdata_31_ <> global.bp.work.DisplayUnit_pkg.DU_DMdata_29_
 global.bp.work.DisplayUnit_pkg.DU_DMdata_31_ <> global.bp.work.DisplayUnit_pkg.DU_DMdata_30_
-global.bp.work.DisplayUnit_pkg.DU_RFdata_31_ <> sd_readData1[31]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_30_ <> sd_readData1[30]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_29_ <> sd_readData1[29]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_28_ <> sd_readData1[28]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_27_ <> sd_readData1[27]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_26_ <> sd_readData1[26]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_25_ <> sd_readData1[25]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_24_ <> sd_readData1[24]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_23_ <> sd_readData1[23]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_22_ <> sd_readData1[22]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_21_ <> sd_readData1[21]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_20_ <> sd_readData1[20]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_19_ <> sd_readData1[19]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_18_ <> sd_readData1[18]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_17_ <> sd_readData1[17]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_16_ <> sd_readData1[16]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_15_ <> sd_readData1[15]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_14_ <> sd_readData1[14]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_13_ <> sd_readData1[13]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_12_ <> sd_readData1[12]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_11_ <> sd_readData1[11]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_10_ <> sd_readData1[10]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_9_ <> sd_readData1[9]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_8_ <> sd_readData1[8]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_7_ <> sd_readData1[7]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_6_ <> sd_readData1[6]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_5_ <> sd_readData1[5]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_4_ <> sd_readData1[4]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_3_ <> sd_readData1[3]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_2_ <> sd_readData1[2]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_1_ <> sd_readData1[1]
-global.bp.work.DisplayUnit_pkg.DU_RFdata_0_ <> sd_readData1[0]
 
 
 |MIPS_SingleCycle|PCUpdate:pcupd
