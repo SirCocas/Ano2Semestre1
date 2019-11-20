@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "MIPS_SingleCycle")
-  (DATE "11/12/2019 14:17:28")
+  (DATE "11/19/2019 10:45:14")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition")
