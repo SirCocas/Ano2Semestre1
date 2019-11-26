@@ -5,7 +5,7 @@ library work;
 use work.MIPS_pkg.all;
 use work.DisplayUnit_pkg.all;
   
-entity mips_single_cycle is 
+entity MIPS_SingleCycle is 
 	port( CLOCK_50 : in std_logic;
 			SW       : in std_logic_vector(2 downto 0); 
 			KEY      : in std_logic_vector(3 downto 0); 
@@ -18,9 +18,9 @@ entity mips_single_cycle is
 			HEX5 : out std_logic_vector(6 downto 0); 
 			HEX6 : out std_logic_vector(6 downto 0); 
 			HEX7 : out std_logic_vector(6 downto 0));
-end mips_single_cycle;
+end MIPS_SingleCycle;
 
-architecture Structural of mips_single_cycle is 
+architecture Structural of MIPS_SingleCycle is 
 
 	signal s_clk, s_reset, s_regDst  : std_logic;
 	signal s_regWrite, s_ALUscr		: std_logic;

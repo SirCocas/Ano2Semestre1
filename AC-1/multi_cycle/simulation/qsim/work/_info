@@ -1,0 +1,237 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/simulation/qsim
+Ehard_block
+Z1 w1574766020
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 K8IbX`K5[Y1gJUKg2X_071
+R0
+Z8 8MIPS_MultiCycle.vho
+Z9 FMIPS_MultiCycle.vho
+l0
+L34
+VOgIg9T_BR7joedFDVM>H13
+!s100 A`ID_i56<Ua56=ZD=[EG=2
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1574766021
+!i10b 1
+Z12 !s108 1574766021.000000
+Z13 !s90 -work|work|MIPS_MultiCycle.vho|
+Z14 !s107 MIPS_MultiCycle.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 OgIg9T_BR7joedFDVM>H13
+l64
+L50
+V`^CmQg<48W[ez[JL_5@Yn2
+!s100 2S?JL;LJ@<3:BHXTNcXS]3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Epcupdate
+Z17 w1574763179
+R3
+R7
+R2
+Z18 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+R4
+R5
+R6
+Z19 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+R0
+R8
+R9
+l0
+L36
+V4kNElkneVUKVb<DP2b6Cn0
+!s100 WNozoQ<OUQO2i7?UMB46U2
+R10
+32
+Z20 !s110 1574763180
+!i10b 1
+Z21 !s108 1574763180.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R18
+R4
+R5
+R6
+R19
+DEx4 work 8 pcupdate 0 22 4kNElkneVUKVb<DP2b6Cn0
+l237
+L51
+VjK4J1PcmHfS_DCh1<Vd^:2
+!s100 _1O6I2:n1CMjZCliGSF660
+R10
+32
+R20
+!i10b 1
+R21
+R13
+R14
+!i113 1
+R15
+R16
+Epcupdate_vhd_vec_tst
+Z22 w1574763177
+R5
+R6
+R0
+Z23 8PCUpdate.vwf.vht
+Z24 FPCUpdate.vwf.vht
+l0
+L31
+V^JeX:7mGgbi@nG]f;3Plb1
+!s100 a3G^540J7k01i@eD?;U^g3
+R10
+32
+R20
+!i10b 1
+R21
+Z25 !s90 -work|work|PCUpdate.vwf.vht|
+Z26 !s107 PCUpdate.vwf.vht|
+!i113 1
+R15
+R16
+Apcupdate_arch
+R5
+R6
+DEx4 work 20 pcupdate_vhd_vec_tst 0 22 ^JeX:7mGgbi@nG]f;3Plb1
+l60
+L33
+VH0:l5b3il]zhaMQ<HFG^h2
+!s100 KU7BiaSF7^8bLgQbh>_@71
+R10
+32
+R20
+!i10b 1
+R21
+R25
+R26
+!i113 1
+R15
+R16
+Eram
+R1
+R3
+R7
+R2
+R18
+R4
+R5
+R6
+R19
+R0
+R8
+R9
+l0
+L79
+Vz4hROjO7VCm1TBnozXXAN3
+!s100 gh@4_W4GbgZ6Fo6J7<KfG0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R18
+R4
+R5
+R6
+R19
+DEx4 work 3 ram 0 22 z4hROjO7VCm1TBnozXXAN3
+l4797
+L135
+V>XhJ@z86Vln28]cQz1SaI3
+!s100 QNQdAHi_N@1eGNcF?4EcH0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eram_vhd_vec_tst
+Z27 w1574766017
+R5
+R6
+R0
+Z28 8ram.vwf.vht
+Z29 Fram.vwf.vht
+l0
+L31
+VddkGO=jh0_616@^<jckok3
+!s100 1k?c4jEWL=IRh7[SdL6ZA2
+R10
+32
+Z30 !s110 1574766023
+!i10b 1
+Z31 !s108 1574766022.000000
+Z32 !s90 -work|work|ram.vwf.vht|
+Z33 !s107 ram.vwf.vht|
+!i113 1
+R15
+R16
+Aram_arch
+R5
+R6
+Z34 DEx4 work 15 ram_vhd_vec_tst 0 22 ddkGO=jh0_616@^<jckok3
+l52
+L33
+V3BI[S0c`2k>HZ0Z>X@X^H0
+!s100 W[BbSPUO;mHPWKa9>7ZQC1
+R10
+32
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R15
+R16

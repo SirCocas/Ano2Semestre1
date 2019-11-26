@@ -1,0 +1,21 @@
+entity RAM is
+	generic( ADDR_BUS_SIZE : positive;
+				DATA_BUS_SIZE : positive);
+	port(clk : in std_logic;
+		  addr : in std_logic_vector(ADDR_BUS_SIZE - 1 downto 0);
+		  ce : in std_logic; --chip enable
+		  wr : in std_logic; --write
+		  rd : in std_logic; --read
+		  dio : inout std_logic_vector(DATA_BIS_SIZE - 1 downto 0));
+	
+end RAM;
+	
+architecture Behavioral of RAM is
+		--TODO: stuff
+	signal s_memory : TMemory := (X"8C010000", --lw $1,0x0000($0)
+												X"20210004", -- addi $1,$1,4
+												X"AC010004", -- sw $1,4($0)
+												others => X"00000000");
+	begin
+		--TODO stuff V2
+end Behavioral
