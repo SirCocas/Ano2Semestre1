@@ -1,20 +1,22 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity Mux41N is
+entity Mux41_N is
 	generic (N : positive := 32);
-	port (sel : in std_logic_vector(1 downto 0);
-			input0 : in std_logic_vector(N-1 downto 0);
-			input1 : in std_logic_vector(N-1 downto 0);
-			input2 : in std_logic_vector(N-1 downto 0);
-			input3 : in std_logic_vector(N-1 downto 0);
-			muxOut : out std_logic_vector(N-1 downto 0));	
-end Mux41N;
+	port (Sel : in std_logic_vector(1 downto 0);
+			In0 : in std_logic_vector(N-1 downto 0);
+			In1 : in std_logic_vector(N-1 downto 0);
+			In2 : in std_logic_vector(N-1 downto 0);
+			In3 : in std_logic_vector(N-1 downto 0);
+			MuxOut : out std_logic_vector(N-1 downto 0));	
+end Mux41_N;
 
-architecture Behavioral of Mux41N is
+architecture Behavioral of Mux41_N is
 begin
-	muxOut <= input0 when (sel = "00") else
-				 input1 when (sel = "01") else
-				 input2 when (sel = "10") else
-				 input3;
+	muxOut <= In0 when (Sel = "00") else
+				 In1 when (Sel = "01") else
+				 In2 when (Sel = "10") else
+				 In3;
 end Behavioral;
+
+

@@ -36,7 +36,7 @@ architecture shell of MIPS_System is
 begin
 
 -- CPU (MIPS multi-cycle)
-cpu:		entity work.MIPSMultiCycle(struct)
+cpu:		entity work.MIPS_MultiCycle(struct)
 			port map(clk 			=> cpu_clock,
 						reset			=> not KEY(1),
 						cpu_rd		=> cpu_read,
@@ -50,10 +50,10 @@ mem:		entity work.RAM(Behavioral)
 							DATA_BUS_SIZE	=> 32)
 			port map(clk	=> cpu_clock,
 						ce		=> '1',
-						rd		=> 
-						wr		=> 
-						addr 	=> 
-						data	=> );
+						rd		=> cpu_read,
+						wr		=> cpu_write,
+						addr 	=> cpu_addressBus,
+						dio	=> cpu_dataBus);
 
 -- Support modules	
 -- Debouncer

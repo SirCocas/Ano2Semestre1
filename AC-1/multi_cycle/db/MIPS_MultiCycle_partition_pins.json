@@ -132,30 +132,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "addr[1]",
-					"strict" : false
-				},
-				{
-					"name" : "addr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "addr[3]",
-					"strict" : false
-				},
-				{
-					"name" : "addr[2]",
-					"strict" : false
-				},
-				{
-					"name" : "addr[5]",
-					"strict" : false
-				},
-				{
-					"name" : "addr[4]",
-					"strict" : false
-				},
-				{
 					"name" : "ce",
 					"strict" : false
 				},
@@ -169,6 +145,30 @@
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[5]",
 					"strict" : false
 				}
 			]

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for MIPS_MultiCycle
-Tue Nov 26 11:00:20 2019
+Tue Dec 03 09:28:13 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Nov 26 11:00:20 2019 ;
+; EDA Netlist Writer Status ; Successful - Tue Dec 03 09:28:13 2019 ;
 ; Revision Name             ; MIPS_MultiCycle                       ;
 ; Top-level Entity Name     ; RAM                                   ;
 ; Family                    ; Cyclone IV E                          ;
@@ -93,14 +93,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue Nov 26 11:00:18 2019
+    Info: Processing started: Tue Dec 03 09:28:12 2019
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/simulation/qsim/ MIPS_MultiCycle -c MIPS_MultiCycle
+Info (119006): Selected device EP4CE115F29C7 for design "MIPS_MultiCycle"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file MIPS_MultiCycle.vho in folder "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4656 megabytes
-    Info: Processing ended: Tue Nov 26 11:00:20 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4649 megabytes
+    Info: Processing ended: Tue Dec 03 09:28:13 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

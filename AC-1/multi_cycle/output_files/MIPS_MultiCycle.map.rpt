@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_MultiCycle
-Tue Nov 26 10:58:36 2019
+Tue Dec 03 11:00:38 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,14 +10,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |RAM
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,20 +36,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 26 10:58:36 2019       ;
+; Analysis & Synthesis Status        ; Failed - Tue Dec 03 11:00:38 2019           ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS_MultiCycle                             ;
-; Top-level Entity Name              ; RAM                                         ;
+; Top-level Entity Name              ; MIPS_System                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 3,509                                       ;
-;     Total combinational functions  ; 1,475                                       ;
-;     Dedicated logic registers      ; 2,080                                       ;
-; Total registers                    ; 2080                                        ;
-; Total pins                         ; 42                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -66,8 +59,10 @@ refer to the applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; RAM                ; MIPS_MultiCycle    ;
+; Top-level entity name                                                      ; MIPS_System        ; MIPS_MultiCycle    ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -76,7 +71,6 @@ refer to the applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -155,120 +149,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; RAM.vhd                          ; yes             ; User VHDL File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 3,509     ;
-;                                             ;           ;
-; Total combinational functions               ; 1475      ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1364      ;
-;     -- 3 input functions                    ; 33        ;
-;     -- <=2 input functions                  ; 78        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1475      ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 2080      ;
-;     -- Dedicated logic registers            ; 2080      ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 42        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 2080      ;
-; Total fan-out                               ; 12011     ;
-; Average fan-out                             ; 3.27      ;
-+---------------------------------------------+-----------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |RAM                       ; 1475 (1475)         ; 2080 (2080)               ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |RAM                ; RAM         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 2080  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2048  ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |RAM ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; ADDR_BUS_SIZE  ; 6     ; Signed Integer                             ;
-; DATA_BUS_SIZE  ; 32    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 42                          ;
-; cycloneiii_ff         ; 2080                        ;
-;     ENA               ; 2048                        ;
-;     plain             ; 32                          ;
-; cycloneiii_io_obuf    ; 32                          ;
-; cycloneiii_lcell_comb ; 1475                        ;
-;     normal            ; 1475                        ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 64                          ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 1364                        ;
-;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 5.56                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:07     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -277,10 +162,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Nov 26 10:58:10 2019
+    Info: Processing started: Tue Dec 03 11:00:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_MultiCycle -c MIPS_MultiCycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file displayunit.vhd
+    Info (12022): Found design unit 1: DisplayUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd Line: 37
+    Info (12023): Found entity 1: DisplayUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file mips_multicycle.vhd
+    Info (12022): Found design unit 1: MIPS_MultiCycle-Struct File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 23
+    Info (12023): Found entity 1: MIPS_MultiCycle File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file mips_system.vhd
+    Info (12022): Found design unit 1: MIPS_System-shell File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 31
+    Info (12023): Found entity 1: MIPS_System File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
     Info (12022): Found design unit 1: RAM-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 18
     Info (12023): Found entity 1: RAM File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 6
@@ -306,128 +200,37 @@ Info (12021): Found 2 design units, including 1 entities, in source file pcupdat
     Info (12022): Found design unit 1: PCUpdate-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/PCUpdate.vhd Line: 17
     Info (12023): Found entity 1: PCupdate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/PCUpdate.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mux41n.vhd
-    Info (12022): Found design unit 1: Mux41N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux41N.vhd Line: 14
-    Info (12023): Found entity 1: Mux41N File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux41N.vhd Line: 4
+    Info (12022): Found design unit 1: Mux41_N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux41N.vhd Line: 14
+    Info (12023): Found entity 1: Mux41_N File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux41N.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file leftshifter2.vhd
     Info (12022): Found design unit 1: LeftShifter2-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/LeftShifter2.vhd Line: 9
     Info (12023): Found entity 1: LeftShifter2 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/LeftShifter2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file register_n.vhd
-    Info (12022): Found design unit 1: Register_N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Register_N.vhd Line: 13
+    Info (12022): Found design unit 1: Register_N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Register_N.vhd Line: 14
     Info (12023): Found entity 1: Register_N File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Register_N.vhd Line: 5
-Info (12127): Elaborating entity "RAM" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "s_memory" is uninferred due to asynchronous read logic File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 22
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[0]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[1]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[2]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[3]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[4]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[5]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[6]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[7]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[8]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[9]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[10]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[11]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[12]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[13]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[14]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[15]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[16]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[17]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[18]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[19]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[20]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[21]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[22]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[23]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[24]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[25]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[26]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[27]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[28]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[29]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[30]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13035): Inserted always-enabled tri-state buffer between "dio[31]" and its non-tri-state driver. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[0]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[1]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[2]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[3]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[4]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[5]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[6]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[7]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[8]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[9]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[10]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[11]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[12]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[13]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[14]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[15]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[16]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[17]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[18]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[19]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[20]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[21]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[22]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[23]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[24]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[25]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[26]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[27]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[28]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[29]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[30]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "dio[31]" is moved to its source File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "dio[0]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[1]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[2]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[3]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[4]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[5]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[6]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[7]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[8]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[9]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[10]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[11]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[12]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[13]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[14]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[15]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[16]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[17]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[18]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[19]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[20]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[21]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[22]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[23]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[24]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[25]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[26]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[27]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[28]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[29]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[30]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-    Warning (13010): Node "dio[31]~synth" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 29
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3551 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 0 output pins
-    Info (21060): Implemented 32 bidirectional pins
-    Info (21061): Implemented 3509 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Tue Nov 26 10:58:36 2019
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:45
+Info (12021): Found 2 design units, including 1 entities, in source file instsplitter.vhd
+    Info (12022): Found design unit 1: InstSplitter-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/InstSplitter.vhd Line: 14
+    Info (12023): Found entity 1: InstSplitter File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/InstSplitter.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file alucontrolunit.vhd
+    Info (12022): Found design unit 1: ALUControlUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/ALUControlUnit.vhd Line: 10
+    Info (12023): Found entity 1: ALUControlUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/ALUControlUnit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux21n.vhd
+    Info (12022): Found design unit 1: Mux21_N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux21N.vhd Line: 12
+    Info (12023): Found entity 1: Mux21_N File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux21N.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
+    Info (12022): Found design unit 1: RegFile-Structural File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 15
+    Info (12023): Found entity 1: RegFile File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file alu32.vhd
+    Info (12022): Found design unit 1: alu32-DataFlow File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd Line: 13
+    Info (12023): Found entity 1: alu32 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
+    Info (12022): Found design unit 1: SignExtend-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/SignExtend.vhd Line: 9
+    Info (12023): Found entity 1: SignExtend File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/SignExtend.vhd Line: 4
+Error (10481): VHDL Use Clause error at RegFile.vhd(18): design library "work" does not contain primary unit "DP_Memory". Verify that the primary unit exists in the library and has been successfully compiled. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 18
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4782 megabytes
+    Error: Processing ended: Tue Dec 03 11:00:39 2019
+    Error: Elapsed time: 00:00:16
+    Error: Total CPU time (on all processors): 00:00:35
 
 

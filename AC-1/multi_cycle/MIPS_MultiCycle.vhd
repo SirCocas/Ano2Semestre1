@@ -24,7 +24,7 @@ architecture Struct of MIPS_MultiCycle is
 -- Signals related to the instruction code
 	signal si_instr : std_logic_vector(31 downto 0);
 	signal si_opcode, si_funct : std_logic_vector(5 downto 0);
-	signal si_rs, si_rt, si_rd, si_writeReg : std_logic_vector(4 downto 0);
+	signal si_rs, si_rt, si_rd, si_writeReg, s_muxM2, s_mux1, s_muxM3 : std_logic_vector(4 downto 0);
 	signal si_imm : std_logic_vector(15 downto 0);
 	signal si_jAddr : std_logic_vector(25 downto 0);
 	signal si_offset32, si_left2 : std_logic_vector(31 downto 0);
@@ -55,29 +55,30 @@ begin
 
 -- PC update
 pcupd:	entity work.PCupdate(Behavioral)	
+			---todo not sure if this is right
 			port map(clk			=> clk,
 						reset			=> reset,
 						zero			=> s_zero,
 						PCSource		=> sc_PCSource, 
-						PCWrite		=> ,
-						PCWriteCond	=> ,
-						PC4			=> ,
-						BTA			=> ,
+						PCWrite		=> sc_PCWrite,
+						PCWriteCond	=> sc_PCWriteCond,
+						PC4			=> s_pc,
+						BTA			=> sd_aluOut,
 						jAddr			=> si_jAddr,
 						pc				=> s_pc);
 
 -- MUX M1 (address multiplexer)
 mux_m1:	entity work.MUX21_N(Behavioral)
-			generic map(N => )
-			port map(In0	=> ,
+			generic map(N => 32)
+			port map(In0	=> s_pc,
 						In1	=> sd_aluOut,
-						Sel	=> ,
+						Sel	=> sc_IorD,
 						MuxOut=> cpu_addrBus);	-- CPU Address Bus		
 					
 -- Instruction Register
 instReg:	entity work.Register_N(Behavioral)
 			port map(clk		=> clk,
-						enable	=> ,
+						enable	=> sc_IrWrite,
 						valIn		=> cpu_dataBus,
 						valOut	=> si_instr);
 
@@ -91,109 +92,109 @@ dataReg:	entity work.Register_N(Behavioral)
 -- Splitter
 spliter:	entity work.InstSplitter(Behavioral)
 			port map(instruction	=> si_instr,
-						opcode		=> ,
-						rs				=> ,
-						rt				=> ,
-						rd				=> ,
-						funct			=> ,
-						imm			=> ,
+						opcode		=> si_opcode,
+						rs				=> si_rs,
+						rt				=> si_rt,
+						rd				=> si_rd,
+						funct			=> si_funct,
+						imm			=> si_imm,
 						jAddr			=> si_jAddr);
 
 -- MUX M2 (Destination register multiplexer)
 mux_m2:	entity work.MUX21_N(Behavioral)
-			generic map(N => )
+			generic map(N => 5)
 			port map(In0	=> si_rt,
-						In1	=> ,
-						Sel	=> ,
-						MuxOut=> );		
+						In1	=> si_rd,
+						Sel	=> sc_RegDst,
+						MuxOut=> s_muxM2);		
 
 -- MUX M3 (Register write data multiplexer)
 mux_m3:	entity work.MUX21_N(Behavioral)
-			generic map(N => )
+			generic map(N => 	5)
 			port map(In0	=> sd_aluOut,
-						In1	=> ,
-						Sel	=> ,
-						MuxOut=> );		
+						In1	=> sd_data,
+						Sel	=> sc_MemToReg,
+						MuxOut=> s_muxM3);		
 						
 -- Register File
 regfile:	entity work.RegFile(Structural)
 			port map(clk			=> clk,
-						writeEnable	=> ,
-						writeReg		=> ,
-						writeData	=> ,
-						readReg1		=> ,
-						readReg2		=> ,
+						writeEnable	=> sc_RegWrite,
+						writeReg		=> s_muxM2,
+						writeData	=> s_muxM3,
+						readReg1		=> si_rs,
+						readReg2		=> si_rt,
 						readData1	=> sd_readData1,
-						readData2	=> );
+						readData2	=> sd_readData2);
 
 -- A Register
 regA:	entity work.Register_N(Behavioral)
-			port map(clk		=> ,
+			port map(clk		=> clk,
 						enable	=> '1',
-						valIn		=> ,
+						valIn		=> sd_readData1,
 						valOut	=> sd_regA);
 
 -- B Register
 regB:	entity work.Register_N(Behavioral)
-			port map(clk		=> ,
+			port map(clk		=> clk,
 						enable	=> '1',
-						valIn		=> ,
+						valIn		=> sd_readData2,
 						valOut	=> sd_regB);
 
 -- MUX M4 (ALU operand A multiplexer)
 mux_m4:	entity work.MUX21_N(Behavioral)
-			generic map(N => )
-			port map(In0	=> ,
-						In1	=> ,
-						Sel	=> ,
-						MuxOut=> );
+			generic map(N => 32)
+			port map(In0	=> s_pc,
+						In1	=> sd_regA,
+						Sel	=> sc_AluSel_a,
+						MuxOut=> sd_aluA);
 
 -- MUX M5 (ALU operand B multiplexer)
 mux_m5:	entity work.MUX41_N(Behavioral)
-			generic map(N => )
-			port map(In0	=> ,
+			generic map(N => 32)
+			port map(In0	=> sd_regB,
 						In1	=> X"00000004",
-						In2 	=> ,
+						In2 	=> si_offset32,
 						In3 	=> si_left2,
-						Sel	=> ,
-						MuxOut=> );
+						Sel	=> sc_AluSel_b,
+						MuxOut=> sd_aluB);
 						
 -- ALU
 alu:		entity work.alu32(Behavioral)
-			port map(a		=> ,
-						b  	=> ,
-						oper	=> ,
+			port map(a		=> sd_aluA,
+						b  	=> sd_aluB,
+						oper	=> s_aluOper,
 						res	=> sd_aluRes,
 						zero	=> s_zero);
 						
 -- ALU Control		
 alucntl:	entity work.ALUControlUnit(Behavioral)
-			port map(ALUop		 => ,
-						funct		 => ,
-						ALUcontrol=> );
+			port map(ALUop		 => sc_AluOp,
+						funct		 => si_funct,
+						ALUcontrol=> s_aluOper);
 						
 -- ALUOut Register
 regALU:	entity work.Register_N(Behavioral)
 			port map(clk		=> clk,
 						enable	=> '1',
-						valIn		=> ,
+						valIn		=> sd_aluRes,
 						valOut	=> sd_aluOut);
 												
 -- left shifter
 ls2:		entity work.LeftShifter2(Behavioral)
-			port map(dataIn	=> ,
+			port map(dataIn	=> si_offset32,
 						dataOut	=> si_left2);
 						
 -- sign extend
 signext:	entity work.SignExtend(Behavioral)
-			port map(dataIn	=> ,
+			port map(dataIn	=> si_imm,
 						dataOut	=> si_offset32);
 						
 -- Control Unit											
 control:	entity work.ControlUnit(Behavioral)
-			port map(Clk			=> ,
+			port map(Clk			=> clk,
 						Reset			=> reset,
-						OpCode 		=> ,
+						OpCode 		=> si_opcode,
 						PCWrite		=> sc_PCWrite,
 						IRWrite		=> sc_IrWrite,
 						IorD			=> sc_IorD,

@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/simulation/qsim
 Ehard_block
-Z1 w1574766020
+Z1 w1575364254
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ VOgIg9T_BR7joedFDVM>H13
 !s100 A`ID_i56<Ua56=ZD=[EG=2
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1574766021
+Z11 !s110 1575364264
 !i10b 1
-Z12 !s108 1574766021.000000
+Z12 !s108 1575364262.000000
 Z13 !s90 -work|work|MIPS_MultiCycle.vho|
 Z14 !s107 MIPS_MultiCycle.vho|
 !i113 1
@@ -146,92 +146,88 @@ R26
 R15
 R16
 Eram
-R1
-R3
-R7
+Z27 w1575365293
 R2
-R18
+R3
 R4
 R5
 R6
-R19
+R7
 R0
 R8
 R9
 l0
-L79
-Vz4hROjO7VCm1TBnozXXAN3
-!s100 gh@4_W4GbgZ6Fo6J7<KfG0
+L34
+Vc?M?;F9MlVOm9ai=7TloP3
+!s100 9>Vk9K:H]iG=f<[<Dz]KF3
 R10
 32
-R11
+Z28 !s110 1575365294
 !i10b 1
-R12
+Z29 !s108 1575365294.000000
 R13
 R14
 !i113 1
 R15
 R16
 Astructure
-R3
-R7
 R2
-R18
+R3
 R4
 R5
 R6
-R19
-DEx4 work 3 ram 0 22 z4hROjO7VCm1TBnozXXAN3
-l4797
-L135
-V>XhJ@z86Vln28]cQz1SaI3
-!s100 QNQdAHi_N@1eGNcF?4EcH0
+R7
+DEx4 work 3 ram 0 22 c?M?;F9MlVOm9ai=7TloP3
+l297
+L45
+VF@eJEAVm7LNTjM`bd14H02
+!s100 To?WolIOYl8gVLZS0l1103
 R10
 32
-R11
+R28
 !i10b 1
-R12
+R29
 R13
 R14
 !i113 1
 R15
 R16
 Eram_vhd_vec_tst
-Z27 w1574766017
+Z30 w1575365291
 R5
 R6
 R0
-Z28 8ram.vwf.vht
-Z29 Fram.vwf.vht
+Z31 8Waveform.vwf.vht
+Z32 FWaveform.vwf.vht
 l0
 L31
 VddkGO=jh0_616@^<jckok3
 !s100 1k?c4jEWL=IRh7[SdL6ZA2
 R10
 32
-Z30 !s110 1574766023
+R28
 !i10b 1
-Z31 !s108 1574766022.000000
-Z32 !s90 -work|work|ram.vwf.vht|
-Z33 !s107 ram.vwf.vht|
+R29
+Z33 !s90 -work|work|Waveform.vwf.vht|
+Z34 !s107 Waveform.vwf.vht|
 !i113 1
 R15
 R16
 Aram_arch
 R5
 R6
-Z34 DEx4 work 15 ram_vhd_vec_tst 0 22 ddkGO=jh0_616@^<jckok3
+Z35 DEx4 work 15 ram_vhd_vec_tst 0 22 ddkGO=jh0_616@^<jckok3
 l52
 L33
-V3BI[S0c`2k>HZ0Z>X@X^H0
-!s100 W[BbSPUO;mHPWKa9>7ZQC1
+V9Eh]a:9Nf2g=>7cz8kH?B1
+!s100 Bo1j]>L3hUQG_=[^PEEg@1
 R10
 32
-R30
+R28
 !i10b 1
-R31
-R32
+R29
 R33
+R34
 !i113 1
 R15
 R16

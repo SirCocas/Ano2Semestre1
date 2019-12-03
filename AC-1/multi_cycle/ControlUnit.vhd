@@ -81,8 +81,11 @@ begin
 				NS <= E7;
 	
 			when E7 =>		-- R-Type Completion
-			   -- Complete
-            -- ...
+				RegWrite <='1';
+				RegDest <= '1';
+				NS <= E0;	
+				--MemToReg <= '0'; --unnecessary
+			   
 	
 			when E2 => 		-- LW / SW / ADDI	
 				AluSelA <= '1';
@@ -102,8 +105,11 @@ begin
 				NS <= E9;
 
 			when E9 => 		-- ADDI / SLTI completion
-			   -- Complete
-            -- ...
+				RegWrite <= '1';
+				RegDest<='0';
+				MemToReg<='0';
+				NS<= E0;
+           
 		
 			when E3 => 		-- LW, phase 4
 				MemRead <= '1';
@@ -111,12 +117,15 @@ begin
 				NS <= E4;
 
 			when E4 => 		-- LW completion
-			   -- Complete
-            -- ...
+				RegWrite<='1';
+				RegDest<='0';
+				MemToReg<='1';
+				NS<=E0;
 	
 			when E5 => 		-- SW completion
-			   -- Complete
-            -- ...
+			   MemWrite <= '1';
+				IorD <= '1';
+				NS <= E0;
 
 			when E10 => 	-- BEQ completion
 				AluSelA <= '1';
@@ -126,8 +135,9 @@ begin
 				NS <= E0;
 	
 			when E11 =>		-- J completion
-			   -- Complete
-            -- ...
+				PCWrite <= '1';
+				PCSource <= "10";
+				NS <=E0;
 
 		end case;
 	end process;
