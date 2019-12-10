@@ -4,8 +4,8 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all; 
 
 entity RAM is
-	generic( ADDR_BUS_SIZE : positive :=6;  --para termos 64 posições
-				DATA_BUS_SIZE : positive :=32);--de 32 bits cada uma
+	generic( ADDR_BUS_SIZE : positive :=6;  
+				DATA_BUS_SIZE : positive :=32); --de 32 bits cada uma
 	port(clk  : in std_logic;
 		  addr : in std_logic_vector(ADDR_BUS_SIZE - 1 downto 0);
 		  ce   : in std_logic; --chip enable -> enable
@@ -16,7 +16,7 @@ entity RAM is
 end RAM;
 	
 architecture Behavioral of RAM is
-	constant NUM_WORDS : positive := (2** ADDR_BUS_SIZE);
+	constant NUM_WORDS : positive := ADDR_BUS_SIZE;
 	subtype TData is std_logic_vector(DATA_BUS_SIZE -1 downto 0);
 	type TMemory is array (0 to NUM_WORDS -1 ) of TData;
 	signal s_memory : TMemory := (X"8C010000", --lw $1,0x0000($0)

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_MultiCycle
-Tue Dec 03 11:00:38 2019
+Tue Dec 10 10:36:42 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,50 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control|CS
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Added for RAM Pass-Through Logic
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated
+ 16. Source assignments for MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated
+ 17. Source assignments for RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated
+ 18. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m1
+ 19. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:instReg
+ 20. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:dataReg
+ 21. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m2
+ 22. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m3
+ 23. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem
+ 24. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem
+ 25. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem
+ 26. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regA
+ 27. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regB
+ 28. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m4
+ 29. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux41_N:mux_m5
+ 30. Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regALU
+ 31. Parameter Settings for User Entity Instance: RAM:mem
+ 32. Parameter Settings for User Entity Instance: DebounceAndClock:debncer
+ 33. Parameter Settings for User Entity Instance: divFreq:divf
+ 34. Parameter Settings for User Entity Instance: DisplayUnit:display
+ 35. Parameter Settings for Inferred Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0
+ 37. Parameter Settings for Inferred Entity Instance: RAM:mem|altsyncram:s_memory_rtl_0
+ 38. altsyncram Parameter Settings by Entity Instance
+ 39. Port Connectivity Checks: "divFreq:divf"
+ 40. Port Connectivity Checks: "RAM:mem"
+ 41. Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regALU"
+ 42. Port Connectivity Checks: "MIPS_MultiCycle:cpu|Mux41_N:mux_m5"
+ 43. Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regB"
+ 44. Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regA"
+ 45. Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:dataReg"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +79,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Dec 03 11:00:38 2019           ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 10 10:36:42 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS_MultiCycle                             ;
 ; Top-level Entity Name              ; MIPS_System                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 2,901                                       ;
+;     Total combinational functions  ; 1,733                                       ;
+;     Dedicated logic registers      ; 1,530                                       ;
+; Total registers                    ; 1530                                        ;
+; Total pins                         ; 105                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 3,072                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -149,11 +192,981 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                     ;
++----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                   ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                      ; Library ;
++----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; work/MIPS_pkg.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/MIPS_pkg.vhd                                  ;         ;
+; work/divFreq.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/divFreq.vhd                                   ;         ;
+; work/DisplayUnit_pkg.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit_pkg.vhd                           ;         ;
+; work/DisplayUnit.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd                               ;         ;
+; MIPS_MultiCycle.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd                                ;         ;
+; MIPS_System.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd                                    ;         ;
+; RAM.vhd                                            ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd                                            ;         ;
+; DebounceAndClock.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DebounceAndClock.vhd                               ;         ;
+; ControlUnit.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/ControlUnit.vhd                                    ;         ;
+; PCUpdate.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/PCUpdate.vhd                                       ;         ;
+; Mux41N.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux41N.vhd                                         ;         ;
+; LeftShifter2.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/LeftShifter2.vhd                                   ;         ;
+; Register_N.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Register_N.vhd                                     ;         ;
+; InstSplitter.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/InstSplitter.vhd                                   ;         ;
+; ALUControlUnit.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/ALUControlUnit.vhd                                 ;         ;
+; Mux21N.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux21N.vhd                                         ;         ;
+; RegFile.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd                                        ;         ;
+; alu32.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd                                          ;         ;
+; SignExtend.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/SignExtend.vhd                                     ;         ;
+; DP_Memory.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd                                      ;         ;
+; altsyncram.tdf                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                                             ;         ;
+; stratix_ram_block.inc                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                      ;         ;
+; lpm_mux.inc                                        ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                                ;         ;
+; lpm_decode.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                                             ;         ;
+; aglobal171.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                                             ;         ;
+; a_rdenreg.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                                              ;         ;
+; altrom.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                                                 ;         ;
+; altram.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                                                 ;         ;
+; altdpram.inc                                       ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                                               ;         ;
+; db/altsyncram_uhj1.tdf                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/altsyncram_uhj1.tdf                             ;         ;
+; db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ;         ;
+; db/altsyncram_dsi1.tdf                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/altsyncram_dsi1.tdf                             ;         ;
+; db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif       ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif       ;         ;
++----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                        ;
++---------------------------------------------+--------------------------------------+
+; Resource                                    ; Usage                                ;
++---------------------------------------------+--------------------------------------+
+; Estimated Total logic elements              ; 2,901                                ;
+;                                             ;                                      ;
+; Total combinational functions               ; 1733                                 ;
+; Logic element usage by number of LUT inputs ;                                      ;
+;     -- 4 input functions                    ; 1248                                 ;
+;     -- 3 input functions                    ; 318                                  ;
+;     -- <=2 input functions                  ; 167                                  ;
+;                                             ;                                      ;
+; Logic elements by mode                      ;                                      ;
+;     -- normal mode                          ; 1546                                 ;
+;     -- arithmetic mode                      ; 187                                  ;
+;                                             ;                                      ;
+; Total registers                             ; 1530                                 ;
+;     -- Dedicated logic registers            ; 1530                                 ;
+;     -- I/O registers                        ; 0                                    ;
+;                                             ;                                      ;
+; I/O pins                                    ; 105                                  ;
+; Total memory bits                           ; 3072                                 ;
+;                                             ;                                      ;
+; Embedded Multiplier 9-bit elements          ; 0                                    ;
+;                                             ;                                      ;
+; Maximum fan-out node                        ; DebounceAndClock:debncer|s_pulsedOut ;
+; Maximum fan-out                             ; 1474                                 ;
+; Total fan-out                               ; 11929                                ;
+; Average fan-out                             ; 3.34                                 ;
++---------------------------------------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                       ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name      ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |MIPS_System                                    ; 1733 (0)            ; 1530 (0)                  ; 3072        ; 0            ; 0       ; 0         ; 105  ; 0            ; |MIPS_System                                                                                                               ; MIPS_System      ; work         ;
+;    |DebounceAndClock:debncer|                   ; 107 (107)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DebounceAndClock:debncer                                                                                      ; DebounceAndClock ; work         ;
+;    |DisplayUnit:display|                        ; 320 (320)           ; 88 (88)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DisplayUnit:display                                                                                           ; DisplayUnit      ; work         ;
+;    |MIPS_MultiCycle:cpu|                        ; 1305 (32)           ; 1378 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu                                                                                           ; MIPS_MultiCycle  ; work         ;
+;       |ALUControlUnit:alucntl|                  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ALUControlUnit:alucntl                                                                    ; ALUControlUnit   ; work         ;
+;       |ControlUnit:control|                     ; 39 (39)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control                                                                       ; ControlUnit      ; work         ;
+;       |Mux21_N:mux_m1|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m1                                                                            ; Mux21_N          ; work         ;
+;       |Mux21_N:mux_m2|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m2                                                                            ; Mux21_N          ; work         ;
+;       |Mux21_N:mux_m3|                          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m3                                                                            ; Mux21_N          ; work         ;
+;       |Mux21_N:mux_m4|                          ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m4                                                                            ; Mux21_N          ; work         ;
+;       |Mux41_N:mux_m5|                          ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5                                                                            ; Mux41_N          ; work         ;
+;       |PCupdate:pcupd|                          ; 52 (52)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd                                                                            ; PCupdate         ; work         ;
+;       |RegFile:regfile|                         ; 861 (0)             ; 1174 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile                                                                           ; RegFile          ; work         ;
+;          |DP_Memory:DU_mem|                     ; 721 (721)           ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem                                                          ; DP_Memory        ; work         ;
+;          |DP_Memory:rs_mem|                     ; 70 (70)             ; 75 (75)                   ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem                                                          ; DP_Memory        ; work         ;
+;             |altsyncram:s_memory_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0                                ; altsyncram       ; work         ;
+;                |altsyncram_uhj1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated ; altsyncram_uhj1  ; work         ;
+;          |DP_Memory:rt_mem|                     ; 70 (70)             ; 75 (75)                   ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem                                                          ; DP_Memory        ; work         ;
+;             |altsyncram:s_memory_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0                                ; altsyncram       ; work         ;
+;                |altsyncram_uhj1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated ; altsyncram_uhj1  ; work         ;
+;       |Register_N:dataReg|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Register_N:dataReg                                                                        ; Register_N       ; work         ;
+;       |Register_N:instReg|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Register_N:instReg                                                                        ; Register_N       ; work         ;
+;       |Register_N:regALU|                       ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Register_N:regALU                                                                         ; Register_N       ; work         ;
+;       |Register_N:regA|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Register_N:regA                                                                           ; Register_N       ; work         ;
+;       |Register_N:regB|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Register_N:regB                                                                           ; Register_N       ; work         ;
+;       |alu32:alu|                               ; 192 (192)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|alu32:alu                                                                                 ; alu32            ; work         ;
+;    |RAM:mem|                                    ; 1 (1)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|RAM:mem                                                                                                       ; RAM              ; work         ;
+;       |altsyncram:s_memory_rtl_0|               ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|RAM:mem|altsyncram:s_memory_rtl_0                                                                             ; altsyncram       ; work         ;
+;          |altsyncram_dsi1:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated                                              ; altsyncram_dsi1  ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                           ;
++--------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------+
+; Name                                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                ;
++--------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------+
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ;
+; RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ALTSYNCRAM                                              ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif       ;
++--------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control|CS                                  ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name   ; CS.E11 ; CS.E10 ; CS.E9 ; CS.E8 ; CS.E7 ; CS.E6 ; CS.E5 ; CS.E4 ; CS.E3 ; CS.E2 ; CS.E1 ; CS.E0 ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; CS.E0  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; CS.E1  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; CS.E2  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; CS.E3  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; CS.E4  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E5  ; 0      ; 0      ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E6  ; 0      ; 0      ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E7  ; 0      ; 0      ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E8  ; 0      ; 0      ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E9  ; 0      ; 0      ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E10 ; 0      ; 1      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; CS.E11 ; 1      ; 0      ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++--------+--------+--------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1530  ;
+; Number of registers using Synchronous Clear  ; 151   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1166  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                             ;
++--------------------------------------------------------------------------------+---------+
+; Inverted Register                                                              ; Fan out ;
++--------------------------------------------------------------------------------+---------+
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[12] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[12] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[74] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[74] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[72] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[72] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[70] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[70] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[68] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[68] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[66] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[66] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[64] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[64] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[62] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[62] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[60] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[60] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[58] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[58] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[56] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[56] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[54] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[54] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[52] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[52] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[50] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[50] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[48] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[48] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[46] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[46] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[44] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[44] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[42] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[42] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[40] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[40] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[38] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[38] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[36] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[36] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[34] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[34] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[32] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[32] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[30] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[30] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[28] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[28] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[26] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[26] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[24] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[24] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[22] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[22] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[20] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[20] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[18] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[18] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[16] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[16] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[14] ; 1       ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[14] ; 1       ;
+; Total number of inverted registers = 64                                        ;         ;
++--------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                                                           ;
++--------------------------------------------------------------------------------+---------------------------------------------------------------------+
+; Register Name                                                                  ; RAM Name                                                            ;
++--------------------------------------------------------------------------------+---------------------------------------------------------------------+
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[0]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[1]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[2]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[3]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[4]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[5]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[6]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[7]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[8]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[9]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[10] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[11] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[12] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[13] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[14] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[15] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[16] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[17] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[18] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[19] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[20] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[21] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[22] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[23] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[24] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[25] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[26] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[27] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[28] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[29] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[30] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[31] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[32] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[33] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[34] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[35] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[36] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[37] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[38] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[39] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[40] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[41] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[42] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[43] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[44] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[45] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[46] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[47] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[48] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[49] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[50] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[51] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[52] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[53] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[54] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[55] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[56] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[57] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[58] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[59] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[60] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[61] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[62] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[63] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[64] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[65] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[66] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[67] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[68] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[69] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[70] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[71] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[72] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[73] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0_bypass[74] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[0]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[1]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[2]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[3]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[4]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[5]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[6]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[7]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[8]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[9]  ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[10] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[11] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[12] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[13] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[14] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[15] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[16] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[17] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[18] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[19] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[20] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[21] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[22] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[23] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[24] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[25] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[26] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[27] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[28] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[29] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[30] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[31] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[32] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[33] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[34] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[35] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[36] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[37] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[38] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[39] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[40] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[41] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[42] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[43] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[44] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[45] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[46] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[47] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[48] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[49] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[50] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[51] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[52] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[53] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[54] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[55] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[56] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[57] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[58] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[59] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[60] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[61] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[62] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[63] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[64] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[65] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[66] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[67] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[68] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[69] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[70] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[71] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[72] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[73] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
+; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0_bypass[74] ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0 ;
++--------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions        ;
++---------------------+------------------------+------+
+; Register Name       ; Megafunction           ; Type ;
++---------------------+------------------------+------+
+; RAM:mem|data[0..31] ; RAM:mem|s_memory_rtl_0 ; RAM  ;
++---------------------+------------------------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DebounceAndClock:debncer|s_repeatCount[20]        ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DebounceAndClock:debncer|s_counter[14]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS_System|DisplayUnit:display|s_inc                         ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DisplayUnit:display|s_repeatCount[29]             ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DisplayUnit:display|s_count[10]                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[31]       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[1]        ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[5]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|Mux43                         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|Mux4                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|Mux34                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5|MuxOut[0]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|ALUControlUnit:alucntl|Mux5   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|disp5[6]                      ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|disp4[6]                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS_System|DebounceAndClock:debncer|s_thd[21]                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5|MuxOut[3]      ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 124 LEs              ; 31 LEs                 ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|alu32:alu|Mux26               ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5|MuxOut[19]     ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|disp6[6]                      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control|DU_CState ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control|DU_CState ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                     ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                      ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0|altsyncram_uhj1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                     ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                      ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------+
+; Assignment                      ; Value              ; From ; To                        ;
++---------------------------------+--------------------+------+---------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                         ;
++---------------------------------+--------------------+------+---------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m1 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:instReg ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:dataReg ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m2 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m3 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; word_bits      ; 32    ; Signed Integer                                                           ;
+; addr_bits      ; 5     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; word_bits      ; 32    ; Signed Integer                                                           ;
+; addr_bits      ; 5     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; word_bits      ; 32    ; Signed Integer                                                           ;
+; addr_bits      ; 5     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regA ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regB ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux21_N:mux_m4 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Mux41_N:mux_m5 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS_MultiCycle:cpu|Register_N:regALU ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:mem ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; addr_bus_size  ; 32    ; Signed Integer              ;
+; data_bus_size  ; 32    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DebounceAndClock:debncer ;
++-------------------------+-------+-------------------------------------+
+; Parameter Name          ; Value ; Type                                ;
++-------------------------+-------+-------------------------------------+
+; khzclkfreq              ; 50000 ; Signed Integer                      ;
+; msecmininwidth          ; 180   ; Signed Integer                      ;
+; msecmininrepeat         ; 400   ; Signed Integer                      ;
+; msecmininrepeatfast     ; 150   ; Signed Integer                      ;
+; msecmininrepeatveryfast ; 40    ; Signed Integer                      ;
+; inpolarity              ; '0'   ; Enumerated                          ;
+; outpolarity             ; '1'   ; Enumerated                          ;
++-------------------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divFreq:divf ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; kdiv           ; 6250000 ; Signed Integer                 ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DisplayUnit:display ;
++---------------------+-------+------------------------------------+
+; Parameter Name      ; Value ; Type                               ;
++---------------------+-------+------------------------------------+
+; khzclkfreq          ; 50000 ; Signed Integer                     ;
+; msecmininwidth      ; 100   ; Signed Integer                     ;
+; msecmininrepeat     ; 400   ; Signed Integer                     ;
+; msecmininrepeatfast ; 100   ; Signed Integer                     ;
+; im_addr_size        ; 6     ; Signed Integer                     ;
+; dm_addr_size        ; 6     ; Signed Integer                     ;
+; datapathtype        ; '1'   ; Enumerated                         ;
++---------------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0 ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+; Parameter Name                     ; Value                                              ; Type                                  ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                  ; Untyped                               ;
+; AUTO_CARRY_CHAINS                  ; ON                                                 ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS                ; ON                                                 ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                ; IGNORE_CASCADE                        ;
+; WIDTH_BYTEENA                      ; 1                                                  ; Untyped                               ;
+; OPERATION_MODE                     ; DUAL_PORT                                          ; Untyped                               ;
+; WIDTH_A                            ; 32                                                 ; Untyped                               ;
+; WIDTHAD_A                          ; 5                                                  ; Untyped                               ;
+; NUMWORDS_A                         ; 32                                                 ; Untyped                               ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                       ; Untyped                               ;
+; ADDRESS_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; OUTDATA_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; WRCONTROL_ACLR_A                   ; NONE                                               ; Untyped                               ;
+; INDATA_ACLR_A                      ; NONE                                               ; Untyped                               ;
+; BYTEENA_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; WIDTH_B                            ; 32                                                 ; Untyped                               ;
+; WIDTHAD_B                          ; 5                                                  ; Untyped                               ;
+; NUMWORDS_B                         ; 32                                                 ; Untyped                               ;
+; INDATA_REG_B                       ; CLOCK1                                             ; Untyped                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                             ; Untyped                               ;
+; RDCONTROL_REG_B                    ; CLOCK1                                             ; Untyped                               ;
+; ADDRESS_REG_B                      ; CLOCK0                                             ; Untyped                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                       ; Untyped                               ;
+; BYTEENA_REG_B                      ; CLOCK1                                             ; Untyped                               ;
+; INDATA_ACLR_B                      ; NONE                                               ; Untyped                               ;
+; WRCONTROL_ACLR_B                   ; NONE                                               ; Untyped                               ;
+; ADDRESS_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; OUTDATA_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; RDCONTROL_ACLR_B                   ; NONE                                               ; Untyped                               ;
+; BYTEENA_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; WIDTH_BYTEENA_A                    ; 1                                                  ; Untyped                               ;
+; WIDTH_BYTEENA_B                    ; 1                                                  ; Untyped                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                                               ; Untyped                               ;
+; BYTE_SIZE                          ; 8                                                  ; Untyped                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                               ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                               ; Untyped                               ;
+; INIT_FILE                          ; db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ; Untyped                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                             ; Untyped                               ;
+; MAXIMUM_DEPTH                      ; 0                                                  ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                    ; Untyped                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                    ; Untyped                               ;
+; ENABLE_ECC                         ; FALSE                                              ; Untyped                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                              ; Untyped                               ;
+; WIDTH_ECCSTATUS                    ; 3                                                  ; Untyped                               ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                       ; Untyped                               ;
+; CBXI_PARAMETER                     ; altsyncram_uhj1                                    ; Untyped                               ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0 ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+; Parameter Name                     ; Value                                              ; Type                                  ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                  ; Untyped                               ;
+; AUTO_CARRY_CHAINS                  ; ON                                                 ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS                ; ON                                                 ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                ; IGNORE_CASCADE                        ;
+; WIDTH_BYTEENA                      ; 1                                                  ; Untyped                               ;
+; OPERATION_MODE                     ; DUAL_PORT                                          ; Untyped                               ;
+; WIDTH_A                            ; 32                                                 ; Untyped                               ;
+; WIDTHAD_A                          ; 5                                                  ; Untyped                               ;
+; NUMWORDS_A                         ; 32                                                 ; Untyped                               ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                       ; Untyped                               ;
+; ADDRESS_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; OUTDATA_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; WRCONTROL_ACLR_A                   ; NONE                                               ; Untyped                               ;
+; INDATA_ACLR_A                      ; NONE                                               ; Untyped                               ;
+; BYTEENA_ACLR_A                     ; NONE                                               ; Untyped                               ;
+; WIDTH_B                            ; 32                                                 ; Untyped                               ;
+; WIDTHAD_B                          ; 5                                                  ; Untyped                               ;
+; NUMWORDS_B                         ; 32                                                 ; Untyped                               ;
+; INDATA_REG_B                       ; CLOCK1                                             ; Untyped                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                             ; Untyped                               ;
+; RDCONTROL_REG_B                    ; CLOCK1                                             ; Untyped                               ;
+; ADDRESS_REG_B                      ; CLOCK0                                             ; Untyped                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                       ; Untyped                               ;
+; BYTEENA_REG_B                      ; CLOCK1                                             ; Untyped                               ;
+; INDATA_ACLR_B                      ; NONE                                               ; Untyped                               ;
+; WRCONTROL_ACLR_B                   ; NONE                                               ; Untyped                               ;
+; ADDRESS_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; OUTDATA_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; RDCONTROL_ACLR_B                   ; NONE                                               ; Untyped                               ;
+; BYTEENA_ACLR_B                     ; NONE                                               ; Untyped                               ;
+; WIDTH_BYTEENA_A                    ; 1                                                  ; Untyped                               ;
+; WIDTH_BYTEENA_B                    ; 1                                                  ; Untyped                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                                               ; Untyped                               ;
+; BYTE_SIZE                          ; 8                                                  ; Untyped                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                               ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                               ; Untyped                               ;
+; INIT_FILE                          ; db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif ; Untyped                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                             ; Untyped                               ;
+; MAXIMUM_DEPTH                      ; 0                                                  ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                             ; Untyped                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                    ; Untyped                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                    ; Untyped                               ;
+; ENABLE_ECC                         ; FALSE                                              ; Untyped                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                              ; Untyped                               ;
+; WIDTH_ECCSTATUS                    ; 3                                                  ; Untyped                               ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                       ; Untyped                               ;
+; CBXI_PARAMETER                     ; altsyncram_uhj1                                    ; Untyped                               ;
++------------------------------------+----------------------------------------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RAM:mem|altsyncram:s_memory_rtl_0                 ;
++------------------------------------+----------------------------------------------+----------------+
+; Parameter Name                     ; Value                                        ; Type           ;
++------------------------------------+----------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                            ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                           ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                          ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                           ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                          ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                            ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                    ; Untyped        ;
+; WIDTH_A                            ; 32                                           ; Untyped        ;
+; WIDTHAD_A                          ; 5                                            ; Untyped        ;
+; NUMWORDS_A                         ; 32                                           ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                 ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                         ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                         ; Untyped        ;
+; WIDTH_B                            ; 32                                           ; Untyped        ;
+; WIDTHAD_B                          ; 5                                            ; Untyped        ;
+; NUMWORDS_B                         ; 32                                           ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                       ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                       ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                       ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                 ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                       ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                         ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                         ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                         ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                         ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                            ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                            ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                         ; Untyped        ;
+; BYTE_SIZE                          ; 8                                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                         ; Untyped        ;
+; INIT_FILE                          ; db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                       ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                            ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                       ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                              ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                        ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                        ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                            ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_dsi1                              ; Untyped        ;
++------------------------------------+----------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                           ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                          ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                              ;
+; Entity Instance                           ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                             ;
+;     -- NUMWORDS_A                         ; 32                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                             ;
+;     -- NUMWORDS_B                         ; 32                                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                      ;
+; Entity Instance                           ; MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|altsyncram:s_memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                             ;
+;     -- NUMWORDS_A                         ; 32                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                             ;
+;     -- NUMWORDS_B                         ; 32                                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                      ;
+; Entity Instance                           ; RAM:mem|altsyncram:s_memory_rtl_0                                              ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                             ;
+;     -- NUMWORDS_A                         ; 32                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                             ;
+;     -- NUMWORDS_B                         ; 32                                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                      ;
++-------------------------------------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divFreq:divf"                                                                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; clkout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "RAM:mem"    ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; ce   ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regALU" ;
++--------+-------+----------+---------------------------------------+
+; Port   ; Type  ; Severity ; Details                               ;
++--------+-------+----------+---------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                          ;
++--------+-------+----------+---------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS_MultiCycle:cpu|Mux41_N:mux_m5" ;
++------------+-------+----------+--------------------------------+
+; Port       ; Type  ; Severity ; Details                        ;
++------------+-------+----------+--------------------------------+
+; in1[31..3] ; Input ; Info     ; Stuck at GND                   ;
+; in1[1..0]  ; Input ; Info     ; Stuck at GND                   ;
+; in1[2]     ; Input ; Info     ; Stuck at VCC                   ;
++------------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regB" ;
++--------+-------+----------+-------------------------------------+
+; Port   ; Type  ; Severity ; Details                             ;
++--------+-------+----------+-------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                        ;
++--------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:regA" ;
++--------+-------+----------+-------------------------------------+
+; Port   ; Type  ; Severity ; Details                             ;
++--------+-------+----------+-------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                        ;
++--------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS_MultiCycle:cpu|Register_N:dataReg" ;
++--------+-------+----------+----------------------------------------+
+; Port   ; Type  ; Severity ; Details                                ;
++--------+-------+----------+----------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                           ;
++--------+-------+----------+----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 255                         ;
+; cycloneiii_ff         ; 1530                        ;
+;     ENA               ; 1078                        ;
+;     ENA SCLR          ; 88                          ;
+;     SCLR              ; 63                          ;
+;     plain             ; 301                         ;
+; cycloneiii_lcell_comb ; 1739                        ;
+;     arith             ; 187                         ;
+;         2 data inputs ; 121                         ;
+;         3 data inputs ; 66                          ;
+;     normal            ; 1552                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 252                         ;
+;         4 data inputs ; 1248                        ;
+; cycloneiii_ram_block  ; 96                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.20                       ;
+; Average LUT depth     ; 6.91                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:11     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,13 +1175,27 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 11:00:23 2019
+    Info: Processing started: Tue Dec 10 10:36:06 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_MultiCycle -c MIPS_MultiCycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file displayunit.vhd
-    Info (12022): Found design unit 1: DisplayUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd Line: 37
-    Info (12023): Found entity 1: DisplayUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd Line: 14
+Info (12021): Found 2 design units, including 0 entities, in source file work/mips_pkg.vhd
+    Info (12022): Found design unit 1: MIPS_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/MIPS_pkg.vhd Line: 10
+    Info (12022): Found design unit 2: MIPS_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/MIPS_pkg.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file work/divfreq.vhd
+    Info (12022): Found design unit 1: divFreq-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/divFreq.vhd Line: 17
+    Info (12023): Found entity 1: divFreq File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/divFreq.vhd Line: 11
+Info (12021): Found 2 design units, including 0 entities, in source file work/displayunit_pkg.vhd
+    Info (12022): Found design unit 1: DisplayUnit_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit_pkg.vhd Line: 13
+    Info (12022): Found design unit 2: DisplayUnit_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit_pkg.vhd Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file work/displayunit.vhd
+    Info (12022): Found design unit 1: DisplayUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 37
+    Info (12023): Found entity 1: DisplayUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file work/debounceunit.vhd
+    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DebounceUnit.vhd Line: 21
+    Info (12023): Found entity 1: DebounceUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DebounceUnit.vhd Line: 11
+Info (15248): File "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd" is a duplicate of already analyzed file "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file displayunit.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file mips_multicycle.vhd
     Info (12022): Found design unit 1: MIPS_MultiCycle-Struct File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 23
     Info (12023): Found entity 1: MIPS_MultiCycle File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 13
@@ -178,18 +1205,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file mips_sy
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
     Info (12022): Found design unit 1: RAM-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 18
     Info (12023): Found entity 1: RAM File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RAM.vhd Line: 6
-Info (12021): Found 2 design units, including 0 entities, in source file mips_pkg.vhd
-    Info (12022): Found design unit 1: MIPS_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_pkg.vhd Line: 10
-    Info (12022): Found design unit 2: MIPS_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_pkg.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file divfreq.vhd
-    Info (12022): Found design unit 1: divFreq-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/divFreq.vhd Line: 17
-    Info (12023): Found entity 1: divFreq File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/divFreq.vhd Line: 11
-Info (12021): Found 2 design units, including 0 entities, in source file displayunit_pkg.vhd
-    Info (12022): Found design unit 1: DisplayUnit_pkg File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit_pkg.vhd Line: 13
-    Info (12022): Found design unit 2: DisplayUnit_pkg-body File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit_pkg.vhd Line: 31
-Info (12021): Found 2 design units, including 1 entities, in source file debounceunit.vhd
-    Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DebounceUnit.vhd Line: 21
-    Info (12023): Found entity 1: DebounceUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DebounceUnit.vhd Line: 11
+Info (15248): File "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_pkg.vhd" is a duplicate of already analyzed file "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/MIPS_pkg.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file mips_pkg.vhd
+Info (15248): File "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/divFreq.vhd" is a duplicate of already analyzed file "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/divFreq.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file divfreq.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file debounceandclock.vhd
     Info (12022): Found design unit 1: DebounceAndClock-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DebounceAndClock.vhd Line: 24
     Info (12023): Found entity 1: DebounceAndClock File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DebounceAndClock.vhd Line: 11
@@ -218,19 +1237,282 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux21n.
     Info (12022): Found design unit 1: Mux21_N-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux21N.vhd Line: 12
     Info (12023): Found entity 1: Mux21_N File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/Mux21N.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: RegFile-Structural File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 15
-    Info (12023): Found entity 1: RegFile File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 4
+    Info (12022): Found design unit 1: RegFile-Structural File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 19
+    Info (12023): Found entity 1: RegFile File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file alu32.vhd
-    Info (12022): Found design unit 1: alu32-DataFlow File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd Line: 13
+    Info (12022): Found design unit 1: alu32-behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd Line: 13
     Info (12023): Found entity 1: alu32 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/alu32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
     Info (12022): Found design unit 1: SignExtend-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/SignExtend.vhd Line: 9
     Info (12023): Found entity 1: SignExtend File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/SignExtend.vhd Line: 4
-Error (10481): VHDL Use Clause error at RegFile.vhd(18): design library "work" does not contain primary unit "DP_Memory". Verify that the primary unit exists in the library and has been successfully compiled. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 18
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4782 megabytes
-    Error: Processing ended: Tue Dec 03 11:00:39 2019
-    Error: Elapsed time: 00:00:16
-    Error: Total CPU time (on all processors): 00:00:35
+Info (12021): Found 2 design units, including 1 entities, in source file dp_memory.vhd
+    Info (12022): Found design unit 1: DP_Memory-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd Line: 23
+    Info (12023): Found entity 1: DP_Memory File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd Line: 5
+Info (12127): Elaborating entity "MIPS_System" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at MIPS_System.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+Warning (10541): VHDL Signal Declaration warning at MIPS_System.vhd(19): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+Info (12129): Elaborating entity "MIPS_MultiCycle" using architecture "A:struct" for hierarchy "MIPS_MultiCycle:cpu" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 39
+Info (12129): Elaborating entity "PCupdate" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|PCupdate:pcupd" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 57
+Info (12129): Elaborating entity "Mux21_N" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|Mux21_N:mux_m1" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 71
+Info (12129): Elaborating entity "Register_N" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|Register_N:instReg" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 79
+Info (12129): Elaborating entity "InstSplitter" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|InstSplitter:spliter" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 93
+Info (12129): Elaborating entity "Mux21_N" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|Mux21_N:mux_m2" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 104
+Info (12129): Elaborating entity "RegFile" using architecture "A:structural" for hierarchy "MIPS_MultiCycle:cpu|RegFile:regfile" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 120
+Info (12129): Elaborating entity "DP_Memory" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/RegFile.vhd Line: 21
+Info (12129): Elaborating entity "Mux41_N" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|Mux41_N:mux_m5" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 153
+Info (12129): Elaborating entity "alu32" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|alu32:alu" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 163
+Info (12129): Elaborating entity "ALUControlUnit" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|ALUControlUnit:alucntl" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 171
+Info (12129): Elaborating entity "LeftShifter2" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|LeftShifter2:ls2" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 184
+Info (12129): Elaborating entity "SignExtend" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|SignExtend:signext" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 189
+Info (12129): Elaborating entity "ControlUnit" using architecture "A:behavioral" for hierarchy "MIPS_MultiCycle:cpu|ControlUnit:control" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 194
+Info (12129): Elaborating entity "RAM" using architecture "A:behavioral" for hierarchy "RAM:mem" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 48
+Info (12129): Elaborating entity "DebounceAndClock" using architecture "A:behavioral" for hierarchy "DebounceAndClock:debncer" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 60
+Info (12129): Elaborating entity "divFreq" using architecture "A:behavioral" for hierarchy "divFreq:divf" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 66
+Info (12129): Elaborating entity "DisplayUnit" using architecture "A:behavioral" for hierarchy "DisplayUnit:display" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 72
+Warning (276020): Inferred RAM node "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "RAM:mem|s_memory_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem|s_memory" is uninferred due to asynchronous read logic File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd Line: 26
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "RAM:mem|s_memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif
+Info (12130): Elaborated megafunction instantiation "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0"
+Info (12133): Instantiated megafunction "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|altsyncram:s_memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/MIPS_MultiCycle.ram0_DP_Memory_59d6aa30.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uhj1.tdf
+    Info (12023): Found entity 1: altsyncram_uhj1 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/altsyncram_uhj1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "RAM:mem|altsyncram:s_memory_rtl_0"
+Info (12133): Instantiated megafunction "RAM:mem|altsyncram:s_memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/MIPS_MultiCycle.ram0_RAM_1be9c39a.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dsi1.tdf
+    Info (12023): Found entity 1: altsyncram_dsi1 File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/db/altsyncram_dsi1.tdf Line: 27
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[15]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a15" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[14]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a14" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[13]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a13" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[12]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a12" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[11]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a11" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[10]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a10" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[9]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a9" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[8]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a8" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[7]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a7" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[6]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a6" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[5]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a5" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[4]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a4" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[3]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a3" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[2]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a2" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[1]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a1" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[0]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a0" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[31]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a31" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[20]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a20" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[16]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a16" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[17]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a17" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[18]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a18" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[19]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a19" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[30]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a30" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[28]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a28" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[27]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a27" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[29]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a29" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[26]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a26" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[21]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a21" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[22]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a22" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[23]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a23" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[24]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a24" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+    Warning (13047): Converted the fan-out from the tri-state buffer "MIPS_MultiCycle:cpu|cpu_dataBus[25]" to the node "RAM:mem|altsyncram:s_memory_rtl_0|altsyncram_dsi1:auto_generated|ram_block1a25" into an OR gate File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 19
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_0_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_10_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_11_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_12_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_13_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_14_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_15_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_16_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_17_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_18_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_19_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_1_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_20_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_21_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_22_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_23_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_24_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_25_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_26_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_27_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_28_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_29_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_2_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_30_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_31_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_3_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_4_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_5_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_6_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_7_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_8_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_DMdata_9_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_0_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_10_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_11_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_12_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_13_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_14_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_15_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_16_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_17_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_18_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_19_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_1_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_20_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_21_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_22_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_23_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_24_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_25_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_26_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_27_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_28_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_29_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_2_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_30_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_31_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_3_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_4_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_5_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_6_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_7_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_8_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Critical Warning (35046): Net "work.DisplayUnit_pkg.DU_PC_9_" has a missing source. The net will be connected to GND and its default value will be ignored.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
+Info (21057): Implemented 3210 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 3009 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 146 warnings
+    Info: Peak virtual memory: 4822 megabytes
+    Info: Processing ended: Tue Dec 10 10:36:42 2019
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:47
 
 

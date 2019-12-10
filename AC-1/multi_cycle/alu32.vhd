@@ -10,7 +10,7 @@ entity alu32 is
 end alu32;
 
 						
-architecture DataFlow of alu32 is
+architecture behavioral of alu32 is
     signal s_a, s_b, s_r, s_slt : unsigned(31 downto 0);
 	 signal s_diff               : signed(31 downto 0);
 begin
@@ -35,4 +35,4 @@ begin
 		 zero <= '1' when (s_diff = X"00000000") 
 					else '0';
 		 
-end DataFlow;
+end behavioral;

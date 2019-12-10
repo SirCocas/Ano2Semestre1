@@ -24,10 +24,10 @@ architecture Struct of MIPS_MultiCycle is
 -- Signals related to the instruction code
 	signal si_instr : std_logic_vector(31 downto 0);
 	signal si_opcode, si_funct : std_logic_vector(5 downto 0);
-	signal si_rs, si_rt, si_rd, si_writeReg, s_muxM2, s_mux1, s_muxM3 : std_logic_vector(4 downto 0);
+	signal si_rs, si_rt, si_rd, si_writeReg, s_muxM2, s_mux1: std_logic_vector(4 downto 0);
 	signal si_imm : std_logic_vector(15 downto 0);
 	signal si_jAddr : std_logic_vector(25 downto 0);
-	signal si_offset32, si_left2 : std_logic_vector(31 downto 0);
+	signal si_offset32, si_left2, s_muxM3 : std_logic_vector(31 downto 0);
 	
 -- Other signals
 	signal s_zero : std_logic;
@@ -110,7 +110,7 @@ mux_m2:	entity work.MUX21_N(Behavioral)
 
 -- MUX M3 (Register write data multiplexer)
 mux_m3:	entity work.MUX21_N(Behavioral)
-			generic map(N => 	5)
+			generic map(N => 	32)
 			port map(In0	=> sd_aluOut,
 						In1	=> sd_data,
 						Sel	=> sc_MemToReg,

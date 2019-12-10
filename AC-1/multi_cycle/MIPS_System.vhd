@@ -46,7 +46,7 @@ cpu:		entity work.MIPS_MultiCycle(struct)
 	
 -- Memory (64x32)
 mem:		entity work.RAM(Behavioral)
-			generic map(ADDR_BUS_SIZE	=> 6,
+			generic map(ADDR_BUS_SIZE	=> 32,
 							DATA_BUS_SIZE	=> 32)
 			port map(clk	=> cpu_clock,
 						ce		=> '1',
