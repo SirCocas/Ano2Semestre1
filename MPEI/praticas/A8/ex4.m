@@ -7,4 +7,7 @@ T= [p^2     0 0 q^2;
    (1-p)^2 0 0 q*(1-q);
     p*(1-p)  0 0 q*(1-q);
     p*(1-p)  1 1 (1-q)^2];
-sum(T)
+
+x0 = [1; zeros(3,1)];
+chances = (T^9) * x0;
+chancesB= chances(2)  %alínea B
