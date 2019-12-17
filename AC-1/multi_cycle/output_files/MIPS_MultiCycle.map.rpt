@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_MultiCycle
-Tue Dec 10 10:53:06 2019
+Tue Dec 17 10:31:11 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -79,13 +79,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 10 10:53:06 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 17 10:31:10 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS_MultiCycle                             ;
 ; Top-level Entity Name              ; MIPS_System                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,901                                       ;
-;     Total combinational functions  ; 1,733                                       ;
+; Total logic elements               ; 2,898                                       ;
+;     Total combinational functions  ; 1,730                                       ;
 ;     Dedicated logic registers      ; 1,530                                       ;
 ; Total registers                    ; 1530                                        ;
 ; Total pins                         ; 105                                         ;
@@ -101,11 +101,8 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; MIPS_System        ; MIPS_MultiCycle    ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
-; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
-; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -114,6 +111,7 @@ refer to the applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -246,16 +244,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------+
 ; Resource                                    ; Usage                                ;
 +---------------------------------------------+--------------------------------------+
-; Estimated Total logic elements              ; 2,901                                ;
+; Estimated Total logic elements              ; 2,898                                ;
 ;                                             ;                                      ;
-; Total combinational functions               ; 1733                                 ;
+; Total combinational functions               ; 1730                                 ;
 ; Logic element usage by number of LUT inputs ;                                      ;
-;     -- 4 input functions                    ; 1248                                 ;
-;     -- 3 input functions                    ; 318                                  ;
+;     -- 4 input functions                    ; 1244                                 ;
+;     -- 3 input functions                    ; 319                                  ;
 ;     -- <=2 input functions                  ; 167                                  ;
 ;                                             ;                                      ;
 ; Logic elements by mode                      ;                                      ;
-;     -- normal mode                          ; 1546                                 ;
+;     -- normal mode                          ; 1543                                 ;
 ;     -- arithmetic mode                      ; 187                                  ;
 ;                                             ;                                      ;
 ; Total registers                             ; 1530                                 ;
@@ -269,7 +267,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                      ;
 ; Maximum fan-out node                        ; DebounceAndClock:debncer|s_pulsedOut ;
 ; Maximum fan-out                             ; 1474                                 ;
-; Total fan-out                               ; 11929                                ;
+; Total fan-out                               ; 11916                                ;
 ; Average fan-out                             ; 3.34                                 ;
 +---------------------------------------------+--------------------------------------+
 
@@ -279,10 +277,10 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name      ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |MIPS_System                                    ; 1733 (0)            ; 1530 (0)                  ; 3072        ; 0            ; 0       ; 0         ; 105  ; 0            ; |MIPS_System                                                                                                               ; MIPS_System      ; work         ;
-;    |DebounceAndClock:debncer|                   ; 107 (107)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DebounceAndClock:debncer                                                                                      ; DebounceAndClock ; work         ;
+; |MIPS_System                                    ; 1730 (0)            ; 1530 (0)                  ; 3072        ; 0            ; 0       ; 0         ; 105  ; 0            ; |MIPS_System                                                                                                               ; MIPS_System      ; work         ;
+;    |DebounceAndClock:debncer|                   ; 109 (109)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DebounceAndClock:debncer                                                                                      ; DebounceAndClock ; work         ;
 ;    |DisplayUnit:display|                        ; 320 (320)           ; 88 (88)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DisplayUnit:display                                                                                           ; DisplayUnit      ; work         ;
-;    |MIPS_MultiCycle:cpu|                        ; 1305 (32)           ; 1378 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu                                                                                           ; MIPS_MultiCycle  ; work         ;
+;    |MIPS_MultiCycle:cpu|                        ; 1300 (32)           ; 1378 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu                                                                                           ; MIPS_MultiCycle  ; work         ;
 ;       |ALUControlUnit:alucntl|                  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ALUControlUnit:alucntl                                                                    ; ALUControlUnit   ; work         ;
 ;       |ControlUnit:control|                     ; 39 (39)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control                                                                       ; ControlUnit      ; work         ;
 ;       |Mux21_N:mux_m1|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m1                                                                            ; Mux21_N          ; work         ;
@@ -290,7 +288,7 @@ refer to the applicable agreement for further details.
 ;       |Mux21_N:mux_m3|                          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m3                                                                            ; Mux21_N          ; work         ;
 ;       |Mux21_N:mux_m4|                          ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m4                                                                            ; Mux21_N          ; work         ;
 ;       |Mux41_N:mux_m5|                          ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5                                                                            ; Mux41_N          ; work         ;
-;       |PCupdate:pcupd|                          ; 52 (52)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd                                                                            ; PCupdate         ; work         ;
+;       |PCupdate:pcupd|                          ; 47 (47)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd                                                                            ; PCupdate         ; work         ;
 ;       |RegFile:regfile|                         ; 861 (0)             ; 1174 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile                                                                           ; RegFile          ; work         ;
 ;          |DP_Memory:DU_mem|                     ; 721 (721)           ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem                                                          ; DP_Memory        ; work         ;
 ;          |DP_Memory:rs_mem|                     ; 70 (70)             ; 75 (75)                   ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem                                                          ; DP_Memory        ; work         ;
@@ -1143,20 +1141,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 88                          ;
 ;     SCLR              ; 63                          ;
 ;     plain             ; 301                         ;
-; cycloneiii_lcell_comb ; 1739                        ;
+; cycloneiii_lcell_comb ; 1736                        ;
 ;     arith             ; 187                         ;
 ;         2 data inputs ; 121                         ;
 ;         3 data inputs ; 66                          ;
-;     normal            ; 1552                        ;
+;     normal            ; 1549                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
 ;         2 data inputs ; 38                          ;
-;         3 data inputs ; 252                         ;
-;         4 data inputs ; 1248                        ;
+;         3 data inputs ; 253                         ;
+;         4 data inputs ; 1244                        ;
 ; cycloneiii_ram_block  ; 96                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.20                       ;
-; Average LUT depth     ; 6.91                        ;
+; Max LUT depth         ; 13.90                       ;
+; Average LUT depth     ; 6.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1165,7 +1163,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1175,7 +1173,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 10 10:52:38 2019
+    Info: Processing started: Tue Dec 17 10:30:44 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_MultiCycle -c MIPS_MultiCycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1194,8 +1192,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file work/di
 Info (12021): Found 2 design units, including 1 entities, in source file work/debounceunit.vhd
     Info (12022): Found design unit 1: DebounceUnit-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DebounceUnit.vhd Line: 21
     Info (12023): Found entity 1: DebounceUnit File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DebounceUnit.vhd Line: 11
-Info (15248): File "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DisplayUnit.vhd" is a duplicate of already analyzed file "C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
-Info (12021): Found 0 design units, including 0 entities, in source file displayunit.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file mips_multicycle.vhd
     Info (12022): Found design unit 1: MIPS_MultiCycle-Struct File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 23
     Info (12023): Found entity 1: MIPS_MultiCycle File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_MultiCycle.vhd Line: 13
@@ -1248,6 +1244,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file signext
 Info (12021): Found 2 design units, including 1 entities, in source file dp_memory.vhd
     Info (12022): Found design unit 1: DP_Memory-Behavioral File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd Line: 23
     Info (12023): Found entity 1: DP_Memory File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/DP_Memory.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file outport.vhd
+    Info (12022): Found design unit 1: OutPort-behav File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/OutPort.vhd Line: 11
+    Info (12023): Found entity 1: OutPort File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/OutPort.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file inport.vhd
+    Info (12022): Found design unit 1: InPort-behav File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/InPort.vhd Line: 10
+    Info (12023): Found entity 1: InPort File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/InPort.vhd Line: 3
 Info (12127): Elaborating entity "MIPS_System" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at MIPS_System.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 18
 Warning (10541): VHDL Signal Declaration warning at MIPS_System.vhd(19): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 19
@@ -1269,6 +1271,26 @@ Info (12129): Elaborating entity "RAM" using architecture "A:behavioral" for hie
 Info (12129): Elaborating entity "DebounceAndClock" using architecture "A:behavioral" for hierarchy "DebounceAndClock:debncer" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 60
 Info (12129): Elaborating entity "divFreq" using architecture "A:behavioral" for hierarchy "divFreq:divf" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 66
 Info (12129): Elaborating entity "DisplayUnit" using architecture "A:behavioral" for hierarchy "DisplayUnit:display" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(85): signal "DU_PC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(88): signal "DU_IMdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(89): signal "DU_IMaddr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(91): signal "DU_RFdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(92): signal "DU_RFaddr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(94): signal "DU_DMdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(95): signal "DU_DMaddr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(103): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(104): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(105): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(106): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(108): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(109): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(110): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(111): signal "s_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(114): signal "s_inputSel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(120): signal "DU_CState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(121): signal "DU_CState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(124): signal "s_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at DisplayUnit.vhd(125): signal "s_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/work/DisplayUnit.vhd Line: 125
 Warning (276020): Inferred RAM node "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rt_mem|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "RAM:mem|s_memory_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -1504,15 +1526,15 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
     Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
     Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
-Info (21057): Implemented 3210 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3207 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 82 output pins
-    Info (21061): Implemented 3009 logic cells
+    Info (21061): Implemented 3006 logic cells
     Info (21064): Implemented 96 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 146 warnings
-    Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Tue Dec 10 10:53:07 2019
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:42
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 166 warnings
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Tue Dec 17 10:31:11 2019
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:39
 
 

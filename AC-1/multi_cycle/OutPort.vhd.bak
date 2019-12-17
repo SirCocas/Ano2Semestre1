@@ -1,0 +1,7 @@
+entity OutPort is
+	port(clk     : in std_logic;
+		  ce      : in std_logic; -- chip enable
+		  wr      : in std_logic; --write
+		  dataIn  : in std_logic_vector(31 downto 0);
+		  dataOut : out std_logic_vector(31 downto 0));
+end OutPort; 

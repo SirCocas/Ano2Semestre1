@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -9.254
+TNS   : -6525.114
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -6.031
+TNS   : -675.611
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -198.320
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -2.693
+TNS   : -1803.046
+
+Type  : Slow 1200mV 0C Model Setup 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -8.271
+TNS   : -5908.301
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -5.397
+TNS   : -602.190
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -198.320
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -2.649
+TNS   : -1802.518
+
+Type  : Fast 1200mV 0C Model Setup 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -4.106
+TNS   : -2669.477
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.444
+TNS   : -253.838
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -165.574
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DebounceAndClock:debncer|s_pulsedOut'
+Slack : -1.000
+TNS   : -1390.000
+
+------------------------------------------------------------

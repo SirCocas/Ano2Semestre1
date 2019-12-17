@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Dec 10 10:53:06 2019
+Analysis & Synthesis Status : Successful - Tue Dec 17 10:31:10 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MIPS_MultiCycle
 Top-level Entity Name : MIPS_System
 Family : Cyclone IV E
-Total logic elements : 2,901
-    Total combinational functions : 1,733
+Total logic elements : 2,898
+    Total combinational functions : 1,730
     Dedicated logic registers : 1,530
 Total registers : 1530
 Total pins : 105

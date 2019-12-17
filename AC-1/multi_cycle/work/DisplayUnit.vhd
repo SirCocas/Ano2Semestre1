@@ -78,7 +78,7 @@ begin
 	DU_DMaddr <= std_logic_vector(s_addrCounters(3)(DM_ADDR_SIZE-1 downto 0));
 	
 -- Select address and data to display
-	process(all)
+	process(refClk, inputSel,DispMode, NextAddr,Dir)
 	begin
 		case InputSel is
 			when "00" =>	-- PC
@@ -97,9 +97,10 @@ begin
 	end process;
 
 -- Display address and data
-	process(all)
-	begin
-		disp0 <= s_bin7seg(to_integer(s_data(3 downto 0)));
+
+		process(RefClk, InputSel, DispMode, NextAddr, Dir)
+		begin
+			disp0 <= s_bin7seg(to_integer(s_data(3 downto 0)));
 		disp1 <= s_bin7seg(to_integer(s_data(7 downto 4)));
 		disp2 <= s_bin7seg(to_integer(s_data(11 downto 8)));
 		disp3 <= s_bin7seg(to_integer(s_data(15 downto 12)));
