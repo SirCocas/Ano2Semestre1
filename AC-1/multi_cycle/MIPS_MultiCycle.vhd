@@ -62,7 +62,7 @@ pcupd:	entity work.PCupdate(Behavioral)
 						PCSource		=> sc_PCSource, 
 						PCWrite		=> sc_PCWrite,
 						PCWriteCond	=> sc_PCWriteCond,
-						PC4			=> s_pc,
+						PC4			=> sd_aluRes,
 						BTA			=> sd_aluOut,
 						jAddr			=> si_jAddr,
 						pc				=> s_pc);

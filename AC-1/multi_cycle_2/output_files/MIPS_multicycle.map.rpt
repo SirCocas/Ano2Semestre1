@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_multicycle
-Tue Dec 17 10:37:11 2019
+Tue Dec 17 10:57:10 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -79,13 +79,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 17 10:37:10 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 17 10:57:10 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS_multicycle                             ;
 ; Top-level Entity Name              ; MIPS_System                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,901                                       ;
-;     Total combinational functions  ; 1,733                                       ;
+; Total logic elements               ; 2,898                                       ;
+;     Total combinational functions  ; 1,730                                       ;
 ;     Dedicated logic registers      ; 1,530                                       ;
 ; Total registers                    ; 1530                                        ;
 ; Total pins                         ; 105                                         ;
@@ -234,9 +234,9 @@ refer to the applicable agreement for further details.
 ; altram.inc                                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                                                   ;         ;
 ; altdpram.inc                                       ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                                                 ;         ;
 ; db/altsyncram_uhj1.tdf                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/altsyncram_uhj1.tdf                             ;         ;
-; db/MIPS_multicycle.ram0_DP_Memory_59d6aa30.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/MIPS_multicycle.ram0_DP_Memory_59d6aa30.hdl.mif ;         ;
+; db/mips_multicycle.ram0_dp_memory_59d6aa30.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/mips_multicycle.ram0_dp_memory_59d6aa30.hdl.mif ;         ;
 ; db/altsyncram_dsi1.tdf                             ; yes             ; Auto-Generated Megafunction                           ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/altsyncram_dsi1.tdf                             ;         ;
-; db/MIPS_multicycle.ram0_RAM_1be9c39a.hdl.mif       ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/MIPS_multicycle.ram0_RAM_1be9c39a.hdl.mif       ;         ;
+; db/mips_multicycle.ram0_ram_1be9c39a.hdl.mif       ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle_2/db/mips_multicycle.ram0_ram_1be9c39a.hdl.mif       ;         ;
 +----------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -245,16 +245,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------+
 ; Resource                                    ; Usage                                ;
 +---------------------------------------------+--------------------------------------+
-; Estimated Total logic elements              ; 2,901                                ;
+; Estimated Total logic elements              ; 2,898                                ;
 ;                                             ;                                      ;
-; Total combinational functions               ; 1733                                 ;
+; Total combinational functions               ; 1730                                 ;
 ; Logic element usage by number of LUT inputs ;                                      ;
-;     -- 4 input functions                    ; 1248                                 ;
-;     -- 3 input functions                    ; 318                                  ;
-;     -- <=2 input functions                  ; 167                                  ;
+;     -- 4 input functions                    ; 1240                                 ;
+;     -- 3 input functions                    ; 327                                  ;
+;     -- <=2 input functions                  ; 163                                  ;
 ;                                             ;                                      ;
 ; Logic elements by mode                      ;                                      ;
-;     -- normal mode                          ; 1546                                 ;
+;     -- normal mode                          ; 1543                                 ;
 ;     -- arithmetic mode                      ; 187                                  ;
 ;                                             ;                                      ;
 ; Total registers                             ; 1530                                 ;
@@ -268,8 +268,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                      ;
 ; Maximum fan-out node                        ; DebounceAndClock:debncer|s_pulsedOut ;
 ; Maximum fan-out                             ; 1474                                 ;
-; Total fan-out                               ; 11929                                ;
-; Average fan-out                             ; 3.34                                 ;
+; Total fan-out                               ; 11974                                ;
+; Average fan-out                             ; 3.36                                 ;
 +---------------------------------------------+--------------------------------------+
 
 
@@ -278,18 +278,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name      ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |MIPS_System                                    ; 1733 (0)            ; 1530 (0)                  ; 3072        ; 0            ; 0       ; 0         ; 105  ; 0            ; |MIPS_System                                                                                                               ; MIPS_System      ; work         ;
-;    |DebounceAndClock:debncer|                   ; 107 (107)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DebounceAndClock:debncer                                                                                      ; DebounceAndClock ; work         ;
+; |MIPS_System                                    ; 1730 (0)            ; 1530 (0)                  ; 3072        ; 0            ; 0       ; 0         ; 105  ; 0            ; |MIPS_System                                                                                                               ; MIPS_System      ; work         ;
+;    |DebounceAndClock:debncer|                   ; 106 (106)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DebounceAndClock:debncer                                                                                      ; DebounceAndClock ; work         ;
 ;    |DisplayUnit:display|                        ; 320 (320)           ; 88 (88)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|DisplayUnit:display                                                                                           ; DisplayUnit      ; work         ;
-;    |MIPS_MultiCycle:cpu|                        ; 1305 (32)           ; 1378 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu                                                                                           ; MIPS_MultiCycle  ; work         ;
+;    |MIPS_MultiCycle:cpu|                        ; 1303 (32)           ; 1378 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu                                                                                           ; MIPS_MultiCycle  ; work         ;
 ;       |ALUControlUnit:alucntl|                  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ALUControlUnit:alucntl                                                                    ; ALUControlUnit   ; work         ;
-;       |ControlUnit:control|                     ; 39 (39)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control                                                                       ; ControlUnit      ; work         ;
+;       |ControlUnit:control|                     ; 40 (40)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|ControlUnit:control                                                                       ; ControlUnit      ; work         ;
 ;       |Mux21_N:mux_m1|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m1                                                                            ; Mux21_N          ; work         ;
 ;       |Mux21_N:mux_m2|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m2                                                                            ; Mux21_N          ; work         ;
 ;       |Mux21_N:mux_m3|                          ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m3                                                                            ; Mux21_N          ; work         ;
 ;       |Mux21_N:mux_m4|                          ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux21_N:mux_m4                                                                            ; Mux21_N          ; work         ;
 ;       |Mux41_N:mux_m5|                          ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|Mux41_N:mux_m5                                                                            ; Mux41_N          ; work         ;
-;       |PCupdate:pcupd|                          ; 52 (52)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd                                                                            ; PCupdate         ; work         ;
+;       |PCupdate:pcupd|                          ; 49 (49)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd                                                                            ; PCupdate         ; work         ;
 ;       |RegFile:regfile|                         ; 861 (0)             ; 1174 (0)                  ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile                                                                           ; RegFile          ; work         ;
 ;          |DP_Memory:DU_mem|                     ; 721 (721)           ; 1024 (1024)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:DU_mem                                                          ; DP_Memory        ; work         ;
 ;          |DP_Memory:rs_mem|                     ; 70 (70)             ; 75 (75)                   ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|MIPS_MultiCycle:cpu|RegFile:regfile|DP_Memory:rs_mem                                                          ; DP_Memory        ; work         ;
@@ -349,8 +349,8 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 1530  ;
-; Number of registers using Synchronous Clear  ; 151   ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Clear  ; 157   ;
+; Number of registers using Synchronous Load   ; 26    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1166  ;
@@ -608,8 +608,8 @@ Encoding Type:  One-Hot
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS_System|DisplayUnit:display|s_inc                         ;
 ; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DisplayUnit:display|s_repeatCount[29]             ;
 ; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |MIPS_System|DisplayUnit:display|s_count[10]                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[31]       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[1]        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[0]        ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[31]       ;
 ; 6:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |MIPS_System|MIPS_MultiCycle:cpu|PCupdate:pcupd|s_pc[5]        ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|Mux43                         ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |MIPS_System|DisplayUnit:display|Mux4                          ;
@@ -1138,24 +1138,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 255                         ;
 ; cycloneiii_ff         ; 1530                        ;
-;     ENA               ; 1078                        ;
-;     ENA SCLR          ; 88                          ;
+;     ENA               ; 1072                        ;
+;     ENA SCLR          ; 68                          ;
+;     ENA SCLR SLD      ; 26                          ;
 ;     SCLR              ; 63                          ;
 ;     plain             ; 301                         ;
-; cycloneiii_lcell_comb ; 1739                        ;
+; cycloneiii_lcell_comb ; 1736                        ;
 ;     arith             ; 187                         ;
 ;         2 data inputs ; 121                         ;
 ;         3 data inputs ; 66                          ;
-;     normal            ; 1552                        ;
+;     normal            ; 1549                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 38                          ;
-;         3 data inputs ; 252                         ;
-;         4 data inputs ; 1248                        ;
+;         2 data inputs ; 34                          ;
+;         3 data inputs ; 261                         ;
+;         4 data inputs ; 1240                        ;
 ; cycloneiii_ram_block  ; 96                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.20                       ;
-; Average LUT depth     ; 6.91                        ;
+; Max LUT depth         ; 13.90                       ;
+; Average LUT depth     ; 6.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1164,7 +1165,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1174,7 +1175,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 17 10:36:51 2019
+    Info: Processing started: Tue Dec 17 10:56:52 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_multicycle -c MIPS_multicycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1531,15 +1532,15 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
     Warning (15610): No output dependent on input pin "SW[16]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
     Warning (15610): No output dependent on input pin "SW[17]" File: C:/Users/sofas/Documents/GitHub/Ano2Semestre1/AC-1/multi_cycle/MIPS_System.vhd Line: 17
-Info (21057): Implemented 3210 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3207 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 82 output pins
-    Info (21061): Implemented 3009 logic cells
+    Info (21061): Implemented 3006 logic cells
     Info (21064): Implemented 96 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 166 warnings
-    Info: Peak virtual memory: 4831 megabytes
-    Info: Processing ended: Tue Dec 17 10:37:11 2019
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Tue Dec 17 10:57:10 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:32
 
 
