@@ -28,7 +28,7 @@ function p=estados(trans, N, init, thr)
                  break;
             end
         end
-        if(checked == true)
+        if(checked)
             break;
         end
         prev=current;
